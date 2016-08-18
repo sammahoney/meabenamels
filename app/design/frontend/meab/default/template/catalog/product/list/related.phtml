@@ -1,0 +1,81 @@
+<?php
+/**
+ * @author      Sam Mahoney for Meab
+ * @copyright   Copyright (C) 2016 - Meab
+ */
+?>
+
+<?php // Original Product
+    $originalproduct = $this->getProduct();
+    if(($originalproduct->getData('swatch_image') == '' || $originalproduct->getData('swatch_image') == 'no_selection') || strpos($this->helper('catalog/image')->init($originalproduct, 'swatch_image'),"placeholder")){ 
+        $originalswatch = $this->helper('catalog/image')->init($originalproduct, 'image')->resize(40);
+    }else{
+        $originalswatch = $this->helper('catalog/image')->init($originalproduct, 'swatch_image')->resize(40);
+    };
+?>
+<?php if($this->getItems()->getSize()): ?>
+<div class="block block-related">
+    <div class="block-content">
+        <ol class="mini-products-list" id="block-related">
+            <li class="item">
+                <div class="product originalproduct">
+                    <img src="<?php echo $originalswatch; ?>" alt="<?php echo $this->escapeHtml($originalproduct->getName()) ?>" />
+                </div>
+            </li>
+        <?php foreach($this->getItems() as $_item): ?>
+            <?php // Check for swatch images 
+                if(($_item->getData('swatch_image') == '' || $_item->getData('swatch_image') == 'no_selection') || strpos($this->helper('catalog/image')->init($_item, 'swatch_image'),"placeholder")){ 
+                    $swatch = $this->helper('catalog/image')->init($_item, 'small_image')->resize(40);
+                }else{
+                    $swatch = $this->helper('catalog/image')->init($_item, 'swatch_image')->resize(40);
+                };
+            ?>
+            <li class="item">
+                <div class="product">
+                    <a href="<?php echo $_item->getProductUrl() ?>" class="swatch-image" title="<?php echo $this->escapeHtml($_item->getName()) ?>">
+                        <img src="<?php echo $swatch ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" />
+                    </a>
+                </div>
+            </li>
+        <?php endforeach ?>
+        </ol>
+        <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+    $$('.related-checkbox').each(function(elem){
+        Event.observe(elem, 'click', addRelatedToProduct)
+    });
+
+    var relatedProductsCheckFlag = false;
+    function selectAllRelated(txt){
+        if (relatedProductsCheckFlag == false) {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = true;
+            });
+            relatedProductsCheckFlag = true;
+            txt.innerHTML="<?php echo $this->__('unselect all') ?>";
+        } else {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = false;
+            });
+            relatedProductsCheckFlag = false;
+            txt.innerHTML="<?php echo $this->__('select all') ?>";
+        }
+        addRelatedToProduct();
+    }
+
+    function addRelatedToProduct(){
+        var checkboxes = $$('.related-checkbox');
+        var values = [];
+        for(var i=0;i<checkboxes.length;i++){
+            if(checkboxes[i].checked) values.push(checkboxes[i].value);
+        }
+        if($('related-products-field')){
+            $('related-products-field').value = values.join(',');
+        }
+    }
+    //]]>
+    </script>
+</div>
+<?php endif ?>

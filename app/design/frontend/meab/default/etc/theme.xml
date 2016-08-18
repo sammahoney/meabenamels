@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Sam Mahoney for Meab
+ * @copyright   Copyright (C) 2016 - Meab
+ */
+-->
+<theme>
+	<parent>rwd/default</parent> 
+</theme>

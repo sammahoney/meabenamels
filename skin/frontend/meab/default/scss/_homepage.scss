@@ -1,0 +1,171 @@
+
+// =============================================
+// Homepage
+// =============================================
+
+.cms-index-index {
+	.carousel {
+		width: 200%;
+		margin-left: -50%;
+		margin-top: -32px;
+		a.arrow-left, a.arrow-right {
+			font-family: 'Alegreya Sans SC', $mainfont;
+			position: absolute;
+			top: 12%;
+			z-index: 9;
+			display: block;
+			left: 10px;
+			font-size: 750%;
+			font-weight: $lightweight;
+		}
+		a.arrow-right {
+			left: auto;
+			right: 10px;
+		}
+		.swiper-container {
+			.swiper-wrapper {
+				.swiper-slide {
+					.slide {
+						height: 560px;
+						background-position: 50% 0 !important;
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-color: #FFF;
+						display: table;
+						width: 100%;
+						.slider-content {
+							display: table-cell;
+							vertical-align: middle;
+							width: 100%;
+							text-align: center;
+							h2 {
+								font-weight: $mediumweight;
+								color: $textcolor;
+								font-size: 720%;
+								letter-spacing: $spacing+12;
+								margin: 0;
+							}
+							h3 {
+								font-weight: $mediumweight;
+								color: $textcolor;
+								font-size: 270%;
+								letter-spacing: $spacing+5;
+								margin: 0;
+								line-height: 90%;
+							}
+							a {
+								display: inline-block;
+								background: transparent;
+								border: 2px solid $bordercolor;
+								color: $textcolor;
+								font-family: $titlefont;
+								font-weight: $boldweight;
+								font-size: 90%;
+								text-transform: uppercase;
+								padding: 5px 20px;
+								margin-top: 30px;
+								@include transition(all $transpeed $transease);
+								&:hover {
+									color: $buttontextcolor;
+									background-color: $bordercolor;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.promo-wrapper {
+		margin: 0 -5px;
+		.promo-box {
+			width: 33.33%;
+			display: block;
+			float: left;
+			padding: 10px 5px;
+			margin: 0;
+			.promo-content {
+				padding: 73.5% 0;
+				background-repeat: no-repeat !important;
+				background-size: cover !important;
+				background-position: 50% 50% !important;
+				position: relative;
+				overflow: hidden;
+				&:hover .content-wrap {
+					background: rgba(0,0,0,0.8);
+				}
+				img.promo-img {
+					position: absolute;
+					top: 0;
+					width: 100%;
+					max-width: 100%;
+					@include transition(all 0.2s $transease);
+				}
+				&:hover img.promo-img {
+					opacity: 0.8;
+					@include css3-prefix(transform, scale(1.02));
+				}
+				.content-wrap {
+					position: absolute;
+					bottom: 0;
+					background: rgba(0,0,0,0.5);
+					text-align: center;
+					width: 100%;
+					padding: 20px;
+					@include transition(all 0.2s $transease);
+					h4 {
+						color: $buttontextcolor;
+						font-size: 130%;
+						font-weight: $lightweight;
+						letter-spacing: $spacing+1;
+					}
+					span {
+						display: inline-block;
+						border: 2px solid $bordercolorinvert;
+						color: $buttontextcolor;
+						font-family: $titlefont;
+						font-weight: $boldweight;
+						font-size: 90%;
+						text-transform: uppercase;
+						padding: 5px 20px;
+						margin-top: 5px;
+						@include transition(all $transpeed $transease);
+						&:hover {
+							color: $textcolor;
+							background-color: $bordercolorinvert;
+						}
+					}
+				}
+			}
+		}
+	}
+	h2.just-arrived {
+		text-align: center;
+		color: $textcolor;
+		letter-spacing: $spacing+1;
+		font-size: 140%;
+		padding: 12px;
+		clear: left;
+	}
+	.products-grid {
+		margin: 0 -5px;
+		li {
+			padding: 0 5px;
+			margin: 0;
+			width: 20%;
+			float: left;
+			clear: none;
+			list-style-type: none;
+		}
+		p {
+			padding-bottom: 0;
+		}
+	}
+}
+// Undo zoom animations for ios to fix flickering bug
+.ios {
+	.products-grid .product-image:hover img, 
+	.cms-index-index .promo-wrapper .promo-box .promo-content:hover img.promo-img { 
+		opacity: 1 !important; -webkit-transform: none !important; 
+	}
+}

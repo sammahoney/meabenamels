@@ -1,0 +1,90 @@
+<?php
+/**
+ * @author      Sam Mahoney for Meab
+ * @copyright   Copyright (C) 2016 - Meab
+ */
+?>
+
+<?php $_items = $this->getReviewsCollection()->getItems(); ?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); 
+// Get review count
+$storeId = Mage::app()->getStore()->getId();
+$summaryData = Mage::getModel('review/review_summary')->setStoreId($storeId)->load($_product->getId());
+$reviewcount = $summaryData->getReviewsCount();
+?>
+<div class="box-collateral box-reviews" id="customer-reviews">
+    <h2><?php echo $this->__('Reviews') ?> <a href="javascript:void(0)" class="review-button"><?php echo $this->__('Write review') ?></a></h2>
+    <?php // echo $this->getChildHtml('toolbar') ?>
+    <div class="reviewform-wrapper"><?php echo $this->getChildHtml('product.review.form') ?></div>
+    <div class="reviews-wrapper">
+        <?php if (count($_items)):?>
+        <ul>
+            <?php $i = 0; foreach ($_items as $_review): $i++; ?>
+            <?php if($i <= 20): ?>
+                <li>
+                    <?php $_votes = $_review->getRatingVotes(); ?>
+                    <?php if (count($_votes)): ?>
+                        <?php foreach ($_votes as $_vote): ?>
+                        <div class="ratings">
+                            <div class="rating-box">
+                                <div class="rating" style="width:<?php echo $_vote->getPercent() ?>%;"></div>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                    <span class="review-title"><?php echo $this->htmlEscape($_review->getTitle()); ?></span>
+                    <span class="review-name">&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $this->htmlEscape($_review->getNickname()); ?></span>
+                    <span class="review-date">(<?php echo $this->formatDate($_review->getCreatedAt()); ?>)</span>
+                    <span class="review-detail"><?php echo nl2br($this->htmlEscape($_review->getDetail())) ?></span>
+                </li>
+            <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+        <?php endif; ?>
+        <div class="clear"></div>
+    </div>
+<?php // echo $this->getChildHtml('toolbar') ?>
+</div>
+
+<script type="text/javascript">
+var $j = jQuery.noConflict();
+$j(document).ready(function(){
+    <?php if(count($_items) <= 2): ?>
+    // Add spacers
+    $j('#customer-reviews li:last-child').after('<li class="review-spacer"></li>');
+    <?php endif; ?>
+    <?php if(count($_items) > 3): ?>
+    // Add spacers
+    $j('#customer-reviews li:nth-child(2n+2)').after('<li class="review-spacer"></li>');
+    // Set height of visible review wrapper
+    var wrappertop = $j('.reviews-wrapper').offset().top;
+    var spacertop = $j('.review-spacer:eq(1)').offset().top;
+    var originalheight = $j('.reviews-wrapper').height();
+    var newheight = spacertop - wrappertop;
+    $j('.reviews-wrapper').after('<div class="reviews-wrapper-after"></div><span class="review-expand"><?php echo $this->__('Read more') ?></span><span class="review-contract"><?php echo $this->__('Read Less') ?></span>').height(newheight);
+    $j('.review-contract').hide();
+    $j('.review-expand').click(function(){
+        $j(this).hide();
+        $j('.reviews-wrapper-after').hide()
+        $j('.review-contract').show();
+        $j('.reviews-wrapper').animate({height: originalheight}, 500); 
+    });
+    $j('.review-contract').click(function(){
+        $j(this).hide();
+        $j('.review-expand, .reviews-wrapper-after').show();
+        $j('.reviews-wrapper').animate({height: newheight}, 500); 
+    });
+    <?php endif; ?>
+    // Collapse review form and set button to expand, change review links to scroll to review section
+    $j('.reviewform-wrapper').hide();
+    $j('.review-button').click(function(){
+        $j('.reviewform-wrapper').stop().slideToggle(500); 
+        $j('#customer-reviews').toggleClass("form-open")
+    });
+    $j('.rating-links a:eq(0)').click(function(e){ e.preventDefault(); $j('html, body').animate({scrollTop: $j("#customer-reviews").offset().top}, 'normal'); });
+    $j('.rating-links a:eq(1)').click(function(e){ e.preventDefault(); $j('.reviewform-wrapper').show(); $j('html, body').animate({scrollTop: $j("#customer-reviews").offset().top}, 'slow'); });
+    // Change review links to scroll to review section
+    $j('.no-rating a').click(function(e){ e.preventDefault(); $j('html, body').animate({scrollTop: $j("#customer-reviews").offset().top}, 'slow'); $j('.reviewform-wrapper').show();});
+});
+</script>

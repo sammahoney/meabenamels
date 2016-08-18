@@ -1,0 +1,322 @@
+
+// =============================================
+// Product View
+// =============================================
+
+.product-view {
+	.product-shop {
+		width: 56%;
+		.product-name {
+			width: 100%;
+			.h1 {
+				font-family: $titlefont;
+				font-weight: $boldweight;
+				font-size: 155%;
+				letter-spacing: $spacing+1;
+				color: $textcolor;
+			}
+		}
+		.price-info {
+			width: 100%;
+			max-width: 100%;
+			text-align: left;
+			padding: 0;
+			margin: 0;
+			.price-box .price {
+				font-family: $titlefont;
+				font-size: 155%;
+				letter-spacing: $spacing+1;
+			}
+			.old-price, .special-price, .regular-price {
+				padding-bottom: 0;
+			}
+		}
+		.availability.in-stock {
+			& span:before {
+				font-family: 'FontAwesome';
+				content: "\f00c";
+				padding-right: 6px;
+			}
+		}
+		.product-options {
+			margin: 15px 0 0;
+			padding: 0;
+			border: 0;
+			display: inline-block;
+			width: auto;
+			float: left;
+			label, p.required {
+				display: none;
+			}
+			dd {
+				.input-box:before {
+					font-family: 'FontAwesome';
+					content: "\f107";
+					position: absolute;
+					left: 142px;
+					margin-top: 2px;
+					z-index: 0;
+				}
+				select {
+					height: 24px;
+					cursor: pointer;
+					width: 160px;
+					max-width: 100%;
+					border: 1px solid $bordercolor;
+					font-family: $mainfont;
+					-webkit-appearance: none;
+					background: transparent;
+					font-size: 80%;
+					padding: 4px 8px 2px;
+					letter-spacing: $spacing+1;
+					position: relative;
+					@include css3-prefix(border-radius, 0);
+					&:focus {
+						outline: none;
+					}
+				}
+			}
+		}
+		.product-options-bottom {
+			background: transparent;
+			margin: 15px 0;
+			padding: 0;
+			border: 0;
+			clear: both;
+		}
+		&.info .box-wrapper {
+			border: 1px solid $bordercolor;
+			border-left: 0;
+			border-right: 0;
+			padding: 25px 0;
+			h4 {
+				font-family: $titlefont;
+				font-weight: $boldweight;
+				font-size: 100%;
+				letter-spacing: $spacing+1;
+				color: $textcolor;
+			}
+			.std {
+				font-size: 80%;
+				font-family: $mainfont;
+				letter-spacing: $spacing+1;
+				line-height: 150%;
+			}
+			&.careguide {
+				border: 0;
+			}
+		}
+	}
+	.add-to-links {
+		li a {
+			font-size: 80%;
+			letter-spacing: $spacing+1;
+		}
+	}
+	.social {
+		clear: both;
+		margin: 0 10px 20px;
+		display: block;
+		padding-top: 10px;
+		li {
+			display: inline-block;
+			width: 38px;
+			.fa:before {
+				top: -14px;
+			}
+			.fa-envelope-o:before, .fa-facebook:before {
+				left: -14px;
+			}
+		}
+	}
+	.ratings .rating-links, p.availability {
+		padding: 0;
+	}
+	.product-img-box {
+		width: 40%;
+		a.arrow-left, a.arrow-right {
+			font-family: 'Alegreya Sans SC', $mainfont;
+			position: absolute;
+			top: 42%;
+			z-index: 10;
+			display: block;
+			left: 10px;
+			font-size: 750%;
+			font-weight: $lightweight;
+		}
+		a.arrow-right {
+			left: auto;
+			right: 10px;
+		}
+		.product-image img {
+			max-height: 900px !important;
+		}
+		a.enlarge {
+			position: absolute;
+			right: 10px;
+			top: -5px;
+			font-size: 19px;
+		}
+		.product-image-thumbs li a {
+			margin-right: 6px;
+			overflow: hidden;
+			@include transition(all 0.2s $transease);
+			&:hover {
+				border-color: transparent;
+				opacity: 0.8;
+				img {
+					@include transition(all 0.2s $transease);
+					@include css3-prefix(transform, scale(1.03));
+				}
+			}
+		}
+	}
+	.qty-wrapper {
+		display: none;
+	}
+	.add-to-cart-wrapper {
+		width: 56%;
+	}
+	.add-to-cart {
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		border: 0;
+	}
+	.add-to-cart-buttons .button {
+		background: transparent;
+		border: 2px solid $bordercolor;
+		margin-top: 10px;
+		@include transition(all 0.2s $transease);
+		&:hover {
+			background: $background;
+			span {
+				color: $buttontextcolor;
+			}
+		}
+		span {
+			color: $textcolor;
+			font-family: $titlefont;
+			font-weight: $boldweight;
+			font-size: 90%;
+		}
+	}
+	.box-collateral {
+		h2 {
+			font-family: $titlefont;
+			font-weight: $mediumweight;
+			font-size: 100%;
+			letter-spacing: $spacing+1;
+			color: $textcolor;
+			border-top: 1px solid $bordercolor;
+			text-align: center;
+			padding: 20px 0 10px;
+		}
+		.product-image {
+			overflow: hidden;
+			border: 0;
+			img {
+				@include transition(all 0.2s $transease);
+				@include css3-prefix(transform, scale(1.02));
+			}
+			&:hover img {
+				opacity: 0.8;
+				@include css3-prefix(transform, scale(1.04));
+			}
+		}
+	}
+	.size-guide {
+		display: inline-block;
+		margin: 19px 0 0 25px;
+		a {
+			border: 1px solid $bordercolor;
+			padding: 5px 10px 4px;
+			text-transform: uppercase;
+			font-family: $titlefont;
+			font-weight: $boldweight;
+			font-size: 75%;
+			letter-spacing: $spacing+1;
+		}
+	}
+	.block-related {
+		padding: 0;
+		float: none;
+		display: inline-block;
+		margin: 5px 0 0;
+		width: 100%;
+		ol {
+			margin-left: 4px;
+		}
+		li.item {
+			margin: 0 20px 5px 0;
+			display: inline-block;
+			clear: none;
+			.product {
+				margin: 0;
+				@include transition(all $transpeed $transease);
+				&:hover {
+					opacity: 0.8;
+				}
+				img {
+					border: 1px solid transparent;
+					padding: 4px;
+					margin: -4px;
+					@include transition(border-color $transpeed $transease);
+					&:hover {
+						border-color: lighten( $bordercolor, 50% )
+					}
+				}
+			}
+			.originalproduct {
+				margin-right: 4px;
+				&:hover {
+					opacity: 1;
+				}
+				img {
+					border: 1px solid $bordercolor !important;
+					padding: 4px;
+					margin: -4px;
+				}
+			}
+		}
+	}
+}
+// Undo zoom animations for ios to fix flickering bug
+.ios {
+	.product-view .product-img-box .product-image-thumbs li a:hover,
+	.product-view .box-collateral .product-image img,
+	.product-view .box-collateral .product-image:hover img,
+	.block-related li.item .product:hover { opacity: 1 !important; -webkit-transform: none !important; }
+}
+// Media 
+img.mfp-img { 
+	max-height: none !important; 
+}
+.mfp-bg {
+	background: $backgroundinvert !important;
+	opacity: 0.95 !important;
+}
+.mfp-figure:after {
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.2) !important;
+	background: $backgroundinvert !important;
+}
+.mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close {
+	color: $textcolor !important;
+}
+.mfp-preloader {
+	text-indent: -9999px;
+	background: url(../images/ajax-loader.gif) no-repeat 50% 50%;
+	height: 32px;
+	width: 32px;
+}
+.product-image, .no-touch .product-img-box .product-image:not(.zoom-available):hover {
+	border: 0;
+}
+// Related (used as swatches)
+.block-related .block-title h2 { display: none; }
+// Upsell
+.box-collateral {
+	margin-bottom: 0;
+}
+.box-up-sell {
+	margin-top: 0;
+}

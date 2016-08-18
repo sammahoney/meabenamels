@@ -1,0 +1,24 @@
+<?php
+/**
+ * @author      Sam Mahoney for Meab
+ * @copyright   Copyright (C) 2016 - Meab
+ */
+?>
+
+<?php 
+$_helper = $this->helper('catalog/output');
+$_product = $this->getProduct();
+$productName = $_helper->productAttribute($_product, $_product->getName(), 'name');
+$productName = str_replace("'", "", $productName);
+$productName = str_replace("&amp;", "and", $productName);
+$productUrl = $this->helper('core/url')->getCurrentUrl();
+$productImage = $_product->getImageUrl();
+$productDesc = $_product->getShortDescription();
+?>
+
+<ul class="social">
+    <li><a class="fa fa-facebook" href="javascript:popWin('http://www.facebook.com/sharer.php?s=100&p[url]=<?php echo urlencode(strip_tags(addslashes($productUrl))); ?>&p[images][0]=<?php echo $productImage; ?>&p[title]=<?php echo urlencode($productName); ?>&p[summary]=<?php echo urlencode(strip_tags(addslashes($productDesc))); ?>', 'facebook', 'width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes');" title="<?php echo $this->__('Share on Facebook') ?>"></a></li>
+    <li><a class="fa fa-twitter" href="javascript:popWin('https://twitter.com/intent/tweet?text=<?php echo urlencode($productName); ?> <?php echo urlencode($productUrl); ?>&tw_p=tweetbutton', 'twitter', 'width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes');" title="<?php echo $this->__('Tweet') ?>"></a></li>
+    <li><a class="fa fa-pinterest" href="javascript:popWin('https://pinterest.com/pin/create/button/?url=<?php echo urlencode($productUrl); ?>&media=<?php echo urlencode($productImage); ?>&description=<?php echo urlencode($productName); ?>', 'pinterest', 'width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes');" title="<?php echo $this->__('Pin it') ?>"></a></li>
+    <li><a class="fa fa-envelope-o" href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" title="<?php echo $this->__('Email to a Friend') ?>"></a></li>
+</ul>

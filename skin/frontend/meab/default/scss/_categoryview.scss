@@ -1,0 +1,119 @@
+
+// =============================================
+// Category View
+// =============================================
+
+.category-description.std {
+	font-size: 75%;
+	font-family: $mainfont;
+	letter-spacing: $spacing+1;
+	line-height: 200%;
+	padding-bottom: 20px;
+}
+.products-grid {
+	.product-name {
+		padding-top: 10px;
+		a {
+			font-size: 80%;
+			font-family: $mainfont;
+			font-weight: $mediumweight+100;
+			color: $textcolor;
+			letter-spacing: $spacing+1;
+			text-transform: capitalize;
+		}
+		a:hover {
+			color: lighten( $textcolor, 50% );
+		}
+	}
+	.product-image {
+		overflow: hidden;
+		border: 0;
+		img {
+			@include transition(all 0.2s $transease);
+		}
+		&:hover img {
+			opacity: 0.8;
+			@include css3-prefix(transform, scale(1.02));
+		}
+	}
+	.product-info {
+		padding: 0;
+	}
+	.price-box {
+		.price {
+			font-family: $mainfont;
+			font-size: 12px;
+			letter-spacing: $spacing+1;
+			font-weight: $mediumweight+100;
+		}
+	}
+}
+// Toolbar
+.toolbar {
+	background: transparent;
+	border: 0;
+	border-top: 1px solid $bordercolor;
+	padding-top: 20px;
+	label {
+		text-transform: lowercase;
+		font-weight: $boldweight;
+		font-size: 90%;
+		letter-spacing: $spacing+1;
+	}
+	select {
+		height: 30px;
+		line-height: 20px;
+		cursor: pointer;
+		width: auto;
+		max-width: 100%;
+		border: 1px solid $bordercolor;
+		font-family: $mainfont;
+		background: transparent;
+		font-size: 80%;
+		padding: 4px 8px 2px;
+		letter-spacing: $spacing+1;
+		position: relative;
+		@include css3-prefix(border-radius, 0);
+		&:focus {
+			outline: none;
+		}
+	}
+	.sorter .sort-by {
+		a.sort-by-switcher {
+			background: none;
+			&:after {
+				font-family: 'FontAwesome';
+				text-indent: 0;
+				position: absolute;
+				display: block;
+				margin: -30px 0 0 8px;
+				color: $textcolor;
+			}
+			&--asc:after {
+				content:"\f176";
+			}
+			&--desc:after {
+				content:"\f175";
+			}
+		}
+	}
+	.pager {
+		.amount {
+			font-family: $mainfont;
+			font-size: 90%;
+			letter-spacing: $spacing+1;
+			margin: 5px 15px -5px;
+		}
+		.pages {
+			a, .current {
+				color: $textcolor;
+			}
+			.next:hover, .previous:hover {
+				border: 0;
+			}
+			.next:before {
+				border-left: 4px solid $bordercolor;
+			}
+		}
+	}
+}

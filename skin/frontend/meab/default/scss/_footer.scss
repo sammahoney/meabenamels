@@ -1,0 +1,107 @@
+
+// =============================================
+// Footer
+// =============================================
+
+.footer {
+	font-family: $mainfont;
+	padding-top: 20px;
+	.block-subscribe {
+		.input-text {
+			border-color: $bordercolor;
+			font-family: $mainfont;
+			font-weight: $lightweight;
+			font-size: 110%;
+			border-radius: 2px 0 0 2px;
+		}
+		.actions .button {
+			font-family: $titlefont;
+			background: transparent;
+			border: 1px solid $bordercolor;
+			border-left: 0;
+			line-height: 15px;
+			border-radius: 0 2px 2px 0;
+			span {
+				color: $textcolor;
+				&:hover {
+					color: lighten($textcolor,50%);
+				}
+			}
+		}
+	}
+	.links {
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		a {
+			font-family: $mainfont;
+			font-size: 110%;
+		}
+		.social {
+			li {
+				display: inline-block;
+				width: 30px;
+				color: $textcolor;
+				.fa-twitter:before {
+					left: -9px;
+				}
+				.fa-instagram:before {
+					left: -5px;
+				}
+			}
+		}
+	}
+	.block-title {
+		border: 0;
+		padding: 0;
+		strong {
+			font-size: 160%;
+			letter-spacing: $spacing;
+			font-weight: $lightweight;
+		}
+	}
+	.button:active {
+		background: lighten( $background, 30% );
+	}
+	.button:focus {
+		background: lighten( $background, 50% );
+	}
+}
+#footer_message {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: lighten($background, 20%);
+	color: $buttontextcolor;
+	font-family: $titlefont;
+	text-align: center;
+	padding: 14px 10%;
+	z-index: 10;
+	text-transform: uppercase;
+	font-size: 110%;
+	letter-spacing: $spacing+2;
+	min-height: 50px;
+	.close {
+		position: absolute;
+		font-size: 20px;
+		font-family: arial;
+		font-weight: $lightweight;
+		right: 20px;
+		bottom: 10px;
+		cursor: pointer;
+	}
+}
+.no-footer-msg .footer-container {
+	padding-bottom: 0;
+}
+.lewis {
+	margin-left: 2px;
+	text-indent: -9999px;
+	background: url(../images/lewis_logo.png) no-repeat 100% 50%;
+	background-size: contain;
+	display: inline-block;
+	width: 40px;
+	height: 14px;
+}
+

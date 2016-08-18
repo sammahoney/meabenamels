@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author      Sam Mahoney for Meab
+ * @copyright   Copyright (C) 2016 - Meab
+ */
+-->
+<layout version="0.1.0">
+
+	<default>
+		<!-- Front-end and header updates. -->
+		<reference name="head">
+			<!-- Remove unwanted items -->
+			<action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+			<action method="removeItem"><type>skin_css</type><name>css/madisonisland.css</name></action>
+			<action method="removeItem"><type>skin_css</type><name>css/madisonisland-ie8.css</name></action>
+			<action method="removeItem"><type>skin_js</type><name>js/lib/jquery.cycle2.min.js</name></action>
+			<action method="removeItem"><type>skin_js</type><name>js/lib/jquery.cycle2.swipe.min.js</name></action>
+			<action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
+			<!-- Additional CSS/JS -->
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/styles.css</name>
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/jquery.sidr.dark.css</name>
+				<!--name>css/jquery.sidr.light.css</name-->
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/meab.css</name>
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/ie-fixes.css</name>
+				<params/>
+				<if>lt IE 10</if>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/min/meab-min.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/min/jquery.c00kie-min.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/min/jquery.sidr.min.js</name>
+			</action>
+			<!-- Fonts -->
+			<block type="core/text" name="google.fonts">
+				<action method="setText">
+					<text><![CDATA[
+						<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700" rel="stylesheet" type="text/css"/>
+						<link href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css"/>
+						<link href="//fonts.googleapis.com/css?family=Alegreya+Sans+SC:100" rel="stylesheet" type="text/css"/>
+					]]></text>
+				</action>
+			</block>
+			<block type="core/text" name="fontawesome">
+				<action method="setText">
+					<text><![CDATA[<link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">]]></text>
+				</action>
+			</block>
+		</reference>
+		<reference name="footer">
+			<block type="cms/block" name="footer_social_links">
+				<action method="setBlockId"><block_id>footer_social_links</block_id></action>
+			</block>
+		</reference>
+		<reference name="before_body_end">
+			<block type="cms/block" name="pop_message">
+				<action method="setBlockId"><block_id>pop_message</block_id></action>
+			</block>
+		</reference>
+		<reference name="footer.before">
+			<block type="reports/product_viewed" name="product.recently.viewed" as="product_recently_viewed" after="-" template="reports/product_viewed.phtml"/>
+		</reference>
+		<remove name="footer_currency" />
+		<remove name="footer_links" />
+		<remove name="footer_links2" />
+	</default>
+
+	<!-- Homepage -->
+	<cms_index_index>
+		<reference name="head">
+			<!-- <block type="core/text" name="google.font">
+				<action method="setText">
+					<text><![CDATA[<link href="//fonts.googleapis.com/css?family=Prata" rel="stylesheet">]]></text>
+				</action>
+			</block> -->
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/swiper.jquery.min.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/swiper.min.css</name>
+			</action>
+		</reference>
+		<remove name="cms_page"/>
+		<reference name="content">
+			<block type="homepage/homepage" name="homepage" as="homepage" template="home/home.phtml"/>
+		</reference>
+	</cms_index_index>
+
+	<!-- Category List View -->
+	<catalog_category_view>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/2columns-left.phtml</template>
+			</action>
+		</reference>
+	</catalog_category_view>
+
+	<!-- Product Detail Page -->
+	<catalog_product_view>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/1column.phtml</template>
+			</action>
+		</reference>
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/swiper.jquery.min.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/swiper.min.css</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/min/jquery.magnific-popup-min.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/magnific-popup.css</name>
+			</action>
+		</reference>
+		<reference name="product.info.additional">
+			<block type="review/product_view_list" name="product.info.product_additional_data" as="product_additional_data" template="review/product/view/list.phtml">
+				<block type="review/form" name="product.review.form" />
+			</block>
+		</reference>
+		<remove name="product.info.sharing" />
+	</catalog_product_view>
+
+	<!-- Review Detail Page -->
+	<review_product_list>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/1column.phtml</template>
+			</action>
+		</reference>
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/swiper.jquery.min.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/swiper.min.css</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/min/jquery.magnific-popup-min.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/magnific-popup.css</name>
+			</action>
+		</reference>
+	</review_product_list>
+
+	<!-- Search List View -->
+	<catalogsearch_result_index>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/2columns-left.phtml</template>
+			</action>
+		</reference>
+	</catalogsearch_result_index>
+
+	<sendfriend_product_send>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/1column.phtml</template>
+			</action>
+		</reference>
+	</sendfriend_product_send>
+
+</layout>

@@ -1,0 +1,20 @@
+#nav > ul > li > ul > li {
+  display: inline-block;
+  float: left;
+  padding: 10px;
+  margin: 10px;
+  width: 20%;
+  min-height: none;
+}
+
+.swiper-slide, .swiper-wrapper {
+  transform: none !important;
+}
+
+.swiper-slide, .cms-index-index .carousel a.arrow-left, .cms-index-index .carousel a.arrow-right {
+  display: none !important;
+}
+
+.swiper-slide-active {
+  display: block !important;
+}
