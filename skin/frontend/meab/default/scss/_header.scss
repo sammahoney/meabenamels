@@ -3,6 +3,14 @@
 // Header
 // =============================================
 
+.topbar {
+	height: 44px;
+	background: $lightblue;
+	overflow: hidden;
+	padding: 12px 20px 0;
+	position: relative;
+    z-index: 2;
+}
 .header-language-background {
 	padding: 0;
 }
@@ -17,6 +25,13 @@ p.welcome-msg {
 }
 .logo {
 	padding: 0;
+	float: none;
+	margin: 15px auto 0;
+	width: 220px;
+	min-height: 66px;
+}
+#header-cart {
+	display: none !important;
 }
 #phone {
 	float: right;
@@ -66,176 +81,116 @@ p.welcome-msg {
 		font-size: 110%;
 	}
 }
-// Header Cart
-#header-cart {
-	&.skip-content {
-		opacity: 0;
-		position: absolute;
-		top: -9999px;
-		display: block;
-		@include transition(opacity $transpeed $transease);
+// Top bar cart
+.cart {
+	float: right;
+	color: $darkblue;
+	span {
+		float: left;
+		font-family: $titlefont;
+		text-transform: uppercase;
+		padding-right: 5px;
 	}
-	&.skip-active {
-		border: 0;
-		opacity: 1;
-		top: 48px;
-		@include css3-prefix(box-shadow, 0 0 3px 0 rgba(0,0,0,0.2));
+	a.bag-icon {
+		margin: -5px 0 0;
+		float: right;
 	}
 }
-.header-minicart {
-	.minicart-message {
-		text-transform: uppercase;
+// Currency selector
+.currency-selector {
+	font-size: 110%;
+	font-family: $titlefont;
+	text-transform: uppercase;
+	width: 25%;
+	float: left;
+	strong {
+		display: block;
+		float: left;
+		color: $darkblue;
 	}
-	.block-subtitle {
-		font-family: $mainfont;
-		color: $textcolor;
-		font-weight: $boldweight;
-		padding-top: 10px;
-		.close {
-			font-family: 'Alegreya Sans SC', $mainfont;
-			top: -5px;
-			right: -5px;
-		}
+	span.current-currency {
+		display: block;
+		color: $darkblue;
+		float: left;
+		border: 1px solid $darkblue;
+		margin: -2px -1px 0 12px;
+		padding: 4px 7px 3px;
+		font-size: 77%;
+		font-style: italic;
 	}
-	.mini-products-list .product-image {
-		min-width: 95px;
-	}
-	.product-details {
-		> a {
-			font-family: $mainfont;
-			font-size: 80%;
-		}
-		.product-name {
-			margin-bottom: 0;
-			padding-bottom: 10px;
-			a {
-				font-family: $titlefont;
-				color: $textcolor;
-				font-weight: $mediumweight;
-			}
-		}
-	}
-	.info-wrapper {
-		margin-bottom: 0;
-		th, td {
-			font-family: $mainfont;
-			font-size: 80%;
-			text-transform: none;
-			color: $textcolor;
-		}
-		.qty {
-			padding: 0;
-			width: 2.2em;
-			text-align: center;
-			height: 22px;
-			font-size: 100%;
-		}
-		.quantity-button {
-			background: lighten($background, 40%);
-			font-size: 90%;
-			padding: 2px 8px;
-			height: 22px;
-			margin: -2px 0 0;
+	ul {
+		margin-top: -2px;
+		li {
 			display: inline-block;
-			border-radius: 2px;
-			&:hover {
-				background: lighten($background, 20%);
-			}
-		}
-	}
-	.subtotal {
-		background: transparent;
-		border: 1px solid lighten($bordercolor, 90%);
-		border-left: 0;
-		border-right: 0;
-		font-size: 100%;
-		padding: 0;
-		.label, .price {
-			color: $textcolor;
-			font-size: 100%;
-		}
-	}
-	.minicart-actions {
-		.checkout-button {
-			background: lighten($background, 20%);
-			color: $buttontextcolor;
-			&:hover {
-				background: $background;
-			}
-		}
-		.cart-link {
-			line-height: 20px;
-			font-size: 100%;
-		}
-	}
-	.truncated {
-		a.details {
-			font-family: $mainfont;
-			font-size: 85%;
-		}
-		.truncated_full_value .item-options {
-		border-color: $bordercolor;
-		font-family: $mainfont;
-		font-size: 85%;
-			&:after {
-				border-bottom: 7px solid $bordercolor;
+			border: 1px solid $darkblue;
+			margin: 0 -6px 0 0;
+			padding: 4px 7px 3px;
+			font-size: 77%;
+			a:first-child {
+				text-align: right;
+				color: lighten($textcolor, 50%);
+				font-weight: $lightweight;
+				text-transform: uppercase;
 			}
 		}
 	}
 }
 // Search
-#search_mini_form {
-	input#search {
-		font-family: $mainfont;
-		font-size: 80%;
-		letter-spacing: $spacing+1;
-		border-color: $bordercolor;
-		font-weight: $mediumweight;
-		color: $textcolor;
-		line-height: 15px;
-		&:focus {
-			outline: none;
-		}
-	}
-	.search-button:before, button.button:before {
-		font-family: $iconfont;
-		content: "2";
-		text-indent: 0;
-		display: block;
-		position: absolute;
-		font-size: 25px;
-		margin: -9px 0 0 -15px;
-		background: none;
-		color: $textcolor;
-		top: 50%;
-		left: 50%;
-		width: 30px;
-		height: 30px;
-	}
-	.search-autocomplete {
-		ul {
-			border: 1px solid $bordercolor;
-			li {
-				color: $textcolor;
-				font-family: $mainfont;
-				&.selected {
-					background-color: lighten($background, 96%);
-				}
+#header-search {
+	display: none;
+	#search_mini_form {
+		input#search {
+			font-family: $mainfont;
+			font-size: 80%;
+			letter-spacing: $spacing+1;
+			border-color: $bordercolor;
+			font-weight: $mediumweight;
+			color: $textcolor;
+			line-height: 15px;
+			&:focus {
+				outline: none;
 			}
 		}
-		&:before {
-			border-bottom-color: $bordercolor;
+		.search-button:before, button.button:before {
+			font-family: $iconfont;
+			content: "2";
+			text-indent: 0;
+			display: block;
+			position: absolute;
+			font-size: 25px;
+			margin: -9px 0 0 -15px;
+			background: none;
+			color: $textcolor;
+			top: 50%;
+			left: 50%;
+			width: 30px;
+			height: 30px;
 		}
-	}
-	button.button {
-		text-indent: -9999px;
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 40px;
-		height: 40px;
-		border: 0;
-		background: none;
+		.search-autocomplete {
+			ul {
+				border: 1px solid $bordercolor;
+				li {
+					color: $textcolor;
+					font-family: $mainfont;
+					&.selected {
+						background-color: lighten($background, 96%);
+					}
+				}
+			}
+			&:before {
+				border-bottom-color: $bordercolor;
+			}
+		}
+		button.button {
+			text-indent: -9999px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 40px;
+			height: 40px;
+			border: 0;
+			background: none;
+		}
 	}
 }
 // Account

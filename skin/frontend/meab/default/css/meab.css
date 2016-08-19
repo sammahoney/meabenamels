@@ -30,6 +30,23 @@ body {
   font-family: "Roboto", arial;
   font-weight: 300;
   color: #000; }
+  body:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    z-index: 1;
+    opacity: 1;
+    background: -moz-linear-gradient(top, rgba(53, 35, 9, 0.85) 10%, rgba(53, 35, 9, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(53, 35, 9, 0.85) 10%, rgba(53, 35, 9, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(53, 35, 9, 0.85) 10%, rgba(53, 35, 9, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+    /* IE6-9 */ }
 
 .wrapper {
   margin: 10px auto 18px;
@@ -62,13 +79,13 @@ input:focus {
   outline: none; }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: 300;
   color: #000; }
 
 .page-title h1, .page-title h2, .product-name h1, .product-name h2 {
   color: #000;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: normal;
   letter-spacing: 1px;
   font-size: 130%;
@@ -77,7 +94,7 @@ h1, h2, h3, h4, h5 {
 
 .block-title h2, .block-title h3, .block-title strong {
   color: #000;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: normal;
   letter-spacing: 1px; }
 
@@ -92,7 +109,7 @@ p {
   padding-bottom: 20px; }
 
 .price-box .price, .price {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   letter-spacing: 1px;
   font-weight: 400; }
 
@@ -126,7 +143,7 @@ p {
   background: gray; }
 
 .button, .button2 span, .button2 span span {
-  font-family: "Roboto Condensed", sans-serif; }
+  font-family: "Julius Sans One", sans-serif; }
   .button:hover, .button2 span:hover, .button2 span span:hover {
     color: gray; }
 
@@ -169,13 +186,13 @@ select {
 form .legend {
   font-size: 100%;
   font-weight: 300;
-  font-family: "Roboto Condensed", sans-serif; }
+  font-family: "Julius Sans One", sans-serif; }
 
 .fieldset p.required {
   font-size: 80%; }
 
 .data-table th, .data-table tr, .data-table td, .data-table tbody td, .data-table tfoot td, .data-table h3.product-name {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: 300;
   font-size: 100%;
   color: #000; }
@@ -209,7 +226,7 @@ ul.messages {
     text-decoration: underline; }
 
 .error-msg, .success-msg, .note-msg, .notice-msg {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   background: #FFF;
   text-align: center !important;
   min-height: 0 !important;
@@ -221,6 +238,14 @@ ul.messages {
   text-transform: uppercase;
   font-weight: 100 !important;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); }
+
+.topbar {
+  height: 44px;
+  background: #F1F1F1;
+  overflow: hidden;
+  padding: 12px 20px 0;
+  position: relative;
+  z-index: 2; }
 
 .header-language-background {
   padding: 0; }
@@ -234,14 +259,21 @@ p.welcome-msg {
     display: none; }
 
 .logo {
-  padding: 0; }
+  padding: 0;
+  float: none;
+  margin: 15px auto 0;
+  width: 220px;
+  min-height: 66px; }
+
+#header-cart {
+  display: none !important; }
 
 #phone {
   float: right;
   margin: 10px 205px 0 0;
   font-size: 110%;
   letter-spacing: 1px;
-  font-family: "Roboto Condensed", sans-serif; }
+  font-family: "Julius Sans One", sans-serif; }
   #phone:before {
     font-family: "PG_Icons";
     content: "4";
@@ -251,7 +283,7 @@ p.welcome-msg {
     margin: -7px 0 0 -26px; }
 
 .account-cart-wrapper {
-  font-family: "Roboto Condensed", sans-serif; }
+  font-family: "Julius Sans One", sans-serif; }
   .account-cart-wrapper .icon {
     background: none !important; }
     .account-cart-wrapper .icon:before {
@@ -267,150 +299,105 @@ p.welcome-msg {
   .account-cart-wrapper .skip-cart .icon:before {
     content: "1"; }
   .account-cart-wrapper .skip-cart .count {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     color: #000; }
   .account-cart-wrapper .skip-cart.no-count .count {
     display: inline-block; }
   .account-cart-wrapper .label {
     font-size: 110%; }
 
-#header-cart.skip-content {
-  opacity: 0;
-  position: absolute;
-  top: -9999px;
-  display: block;
-  transition: opacity 0.1s ease-in;
-  -webkit-transition: opacity 0.1s ease-in;
-  -moz-transition: opacity 0.1s ease-in;
-  -o-transition: opacity 0.1s ease-in; }
-#header-cart.skip-active {
-  border: 0;
-  opacity: 1;
-  top: 48px;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2); }
+.cart {
+  float: right;
+  color: #777F92; }
+  .cart span {
+    float: left;
+    font-family: "Julius Sans One", sans-serif;
+    text-transform: uppercase;
+    padding-right: 5px; }
+  .cart a.bag-icon {
+    margin: -5px 0 0;
+    float: right; }
 
-.header-minicart .minicart-message {
-  text-transform: uppercase; }
-.header-minicart .block-subtitle {
-  font-family: "Roboto", arial;
-  color: #000;
-  font-weight: 500;
-  padding-top: 10px; }
-  .header-minicart .block-subtitle .close {
-    font-family: "Alegreya Sans SC", "Roboto", arial;
-    top: -5px;
-    right: -5px; }
-.header-minicart .mini-products-list .product-image {
-  min-width: 95px; }
-.header-minicart .product-details > a {
-  font-family: "Roboto", arial;
-  font-size: 80%; }
-.header-minicart .product-details .product-name {
-  margin-bottom: 0;
-  padding-bottom: 10px; }
-  .header-minicart .product-details .product-name a {
-    font-family: "Roboto Condensed", sans-serif;
-    color: #000;
-    font-weight: 300; }
-.header-minicart .info-wrapper {
-  margin-bottom: 0; }
-  .header-minicart .info-wrapper th, .header-minicart .info-wrapper td {
+.currency-selector {
+  font-size: 110%;
+  font-family: "Julius Sans One", sans-serif;
+  text-transform: uppercase;
+  width: 25%;
+  float: left; }
+  .currency-selector strong {
+    display: block;
+    float: left;
+    color: #777F92; }
+  .currency-selector span.current-currency {
+    display: block;
+    color: #777F92;
+    float: left;
+    border: 1px solid #777F92;
+    margin: -2px -1px 0 12px;
+    padding: 4px 7px 3px;
+    font-size: 77%;
+    font-style: italic; }
+  .currency-selector ul {
+    margin-top: -2px; }
+    .currency-selector ul li {
+      display: inline-block;
+      border: 1px solid #777F92;
+      margin: 0 -6px 0 0;
+      padding: 4px 7px 3px;
+      font-size: 77%; }
+      .currency-selector ul li a:first-child {
+        text-align: right;
+        color: gray;
+        font-weight: 100;
+        text-transform: uppercase; }
+
+#header-search {
+  display: none; }
+  #header-search #search_mini_form input#search {
     font-family: "Roboto", arial;
     font-size: 80%;
-    text-transform: none;
-    color: #000; }
-  .header-minicart .info-wrapper .qty {
-    padding: 0;
-    width: 2.2em;
-    text-align: center;
-    height: 22px;
-    font-size: 100%; }
-  .header-minicart .info-wrapper .quantity-button {
-    background: #666666;
-    font-size: 90%;
-    padding: 2px 8px;
-    height: 22px;
-    margin: -2px 0 0;
-    display: inline-block;
-    border-radius: 2px; }
-    .header-minicart .info-wrapper .quantity-button:hover {
-      background: #333333; }
-.header-minicart .subtotal {
-  background: transparent;
-  border: 1px solid #e6e6e6;
-  border-left: 0;
-  border-right: 0;
-  font-size: 100%;
-  padding: 0; }
-  .header-minicart .subtotal .label, .header-minicart .subtotal .price {
+    letter-spacing: 1px;
+    border-color: #000;
+    font-weight: 300;
     color: #000;
-    font-size: 100%; }
-.header-minicart .minicart-actions .checkout-button {
-  background: #333333;
-  color: #FFF; }
-  .header-minicart .minicart-actions .checkout-button:hover {
-    background: #000; }
-.header-minicart .minicart-actions .cart-link {
-  line-height: 20px;
-  font-size: 100%; }
-.header-minicart .truncated a.details {
-  font-family: "Roboto", arial;
-  font-size: 85%; }
-.header-minicart .truncated .truncated_full_value .item-options {
-  border-color: #000;
-  font-family: "Roboto", arial;
-  font-size: 85%; }
-  .header-minicart .truncated .truncated_full_value .item-options:after {
-    border-bottom: 7px solid #000; }
-
-#search_mini_form input#search {
-  font-family: "Roboto", arial;
-  font-size: 80%;
-  letter-spacing: 1px;
-  border-color: #000;
-  font-weight: 300;
-  color: #000;
-  line-height: 15px; }
-  #search_mini_form input#search:focus {
-    outline: none; }
-#search_mini_form .search-button:before, #search_mini_form button.button:before {
-  font-family: "PG_Icons";
-  content: "2";
-  text-indent: 0;
-  display: block;
-  position: absolute;
-  font-size: 25px;
-  margin: -9px 0 0 -15px;
-  background: none;
-  color: #000;
-  top: 50%;
-  left: 50%;
-  width: 30px;
-  height: 30px; }
-#search_mini_form .search-autocomplete ul {
-  border: 1px solid #000; }
-  #search_mini_form .search-autocomplete ul li {
+    line-height: 15px; }
+    #header-search #search_mini_form input#search:focus {
+      outline: none; }
+  #header-search #search_mini_form .search-button:before, #header-search #search_mini_form button.button:before {
+    font-family: "PG_Icons";
+    content: "2";
+    text-indent: 0;
+    display: block;
+    position: absolute;
+    font-size: 25px;
+    margin: -9px 0 0 -15px;
+    background: none;
     color: #000;
-    font-family: "Roboto", arial; }
-    #search_mini_form .search-autocomplete ul li.selected {
-      background-color: whitesmoke; }
-#search_mini_form .search-autocomplete:before {
-  border-bottom-color: #000; }
-#search_mini_form button.button {
-  text-indent: -9999px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  border: 0;
-  background: none; }
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px; }
+  #header-search #search_mini_form .search-autocomplete ul {
+    border: 1px solid #000; }
+    #header-search #search_mini_form .search-autocomplete ul li {
+      color: #000;
+      font-family: "Roboto", arial; }
+      #header-search #search_mini_form .search-autocomplete ul li.selected {
+        background-color: whitesmoke; }
+  #header-search #search_mini_form .search-autocomplete:before {
+    border-bottom-color: #000; }
+  #header-search #search_mini_form button.button {
+    text-indent: -9999px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: none; }
 
 #header-account a {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   color: #000;
   text-transform: uppercase; }
   #header-account a:hover {
@@ -434,62 +421,6 @@ p.welcome-msg {
   -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
   -o-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2); }
-
-.currency-selector {
-  position: absolute;
-  z-index: 6;
-  right: 385px;
-  font-size: 110%;
-  font-family: "Roboto Condensed", sans-serif;
-  text-transform: uppercase; }
-  .currency-selector .gbp-before, .currency-selector .eur-before, .currency-selector .usd-before {
-    width: auto;
-    height: 40px;
-    background: none;
-    overflow: hidden;
-    display: block;
-    margin-top: 10px; }
-    .currency-selector .gbp-before:before, .currency-selector .eur-before:before, .currency-selector .usd-before:before {
-      content: "3";
-      font-family: "PG_Icons";
-      color: #000;
-      font-size: 150%;
-      position: absolute;
-      margin: -6px 0 0 -21px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale; }
-  .currency-selector .eur-before:before {
-    content: "€";
-    margin-left: -25px; }
-  .currency-selector .usd-before:before {
-    content: "$";
-    margin-left: -21px; }
-  .currency-selector .eur-after:after, .currency-selector .gbp-after:after, .currency-selector .usd-after:after {
-    content: "€";
-    font-family: "PG_Icons";
-    color: #000;
-    font-size: 150%;
-    position: absolute;
-    margin: -7px 0 0 6px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-  .currency-selector .gbp-after:after {
-    content: "3"; }
-  .currency-selector .usd-after:after {
-    content: "$"; }
-  .currency-selector ul {
-    white-space: nowrap;
-    position: absolute;
-    right: -9px;
-    top: 6px; }
-    .currency-selector ul li {
-      background: #FFF;
-      padding: 4px 27px 2px 9px; }
-      .currency-selector ul li a:first-child {
-        text-align: right;
-        color: gray;
-        font-weight: 100;
-        text-transform: uppercase; }
 
 #header-nav {
   border-bottom: 2px solid #000; }
@@ -525,7 +456,8 @@ p.welcome-msg {
     -o-transition: opacity 0 ease-in; }
 
 .nav-primary {
-  position: relative; }
+  position: relative;
+  text-align: center; }
   .nav-primary .view-all {
     display: none; }
   .nav-primary .menu-active {
@@ -555,9 +487,9 @@ p.welcome-msg {
       color: #000;
       position: relative; }
       .nav-primary li.level0 a.level0 {
-        font-family: "Roboto Condensed", sans-serif;
-        font-size: 128%;
-        letter-spacing: 1px;
+        font-family: "Julius Sans One", sans-serif;
+        font-size: 110%;
+        letter-spacing: 3px;
         padding: 0 25px 15px; }
       .nav-primary li.level0 a:hover {
         color: gray; }
@@ -590,7 +522,7 @@ p.welcome-msg {
         .nav-primary li.level0 ul.level0 li.level1 a {
           border: 0;
           color: #FFF;
-          font-family: "Roboto Condensed", sans-serif;
+          font-family: "Julius Sans One", sans-serif;
           font-size: 122%;
           letter-spacing: 1px;
           text-transform: uppercase;
@@ -640,154 +572,27 @@ p.welcome-msg {
 .breadcrumbs strong {
   color: #000; }
 
-.cms-index-index .carousel {
-  width: 200%;
-  margin-left: -50%;
-  margin-top: -32px; }
-  .cms-index-index .carousel a.arrow-left, .cms-index-index .carousel a.arrow-right {
-    font-family: "Alegreya Sans SC", "Roboto", arial;
-    position: absolute;
-    top: 12%;
-    z-index: 9;
-    display: block;
-    left: 10px;
-    font-size: 750%;
-    font-weight: 100; }
-  .cms-index-index .carousel a.arrow-right {
-    left: auto;
-    right: 10px; }
-  .cms-index-index .carousel .swiper-container .swiper-wrapper .swiper-slide .slide {
-    height: 560px;
-    background-position: 50% 0 !important;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: #FFF;
-    display: table;
-    width: 100%; }
-    .cms-index-index .carousel .swiper-container .swiper-wrapper .swiper-slide .slide .slider-content {
-      display: table-cell;
-      vertical-align: middle;
-      width: 100%;
-      text-align: center; }
-      .cms-index-index .carousel .swiper-container .swiper-wrapper .swiper-slide .slide .slider-content h2 {
-        font-weight: 300;
-        color: #000;
-        font-size: 720%;
-        letter-spacing: 12px;
-        margin: 0; }
-      .cms-index-index .carousel .swiper-container .swiper-wrapper .swiper-slide .slide .slider-content h3 {
-        font-weight: 300;
-        color: #000;
-        font-size: 270%;
-        letter-spacing: 5px;
-        margin: 0;
-        line-height: 90%; }
-      .cms-index-index .carousel .swiper-container .swiper-wrapper .swiper-slide .slide .slider-content a {
-        display: inline-block;
-        background: transparent;
-        border: 2px solid #000;
-        color: #000;
-        font-family: "Roboto Condensed", sans-serif;
-        font-weight: 500;
-        font-size: 90%;
-        text-transform: uppercase;
-        padding: 5px 20px;
-        margin-top: 30px;
-        transition: all 0.1s ease-in;
-        -webkit-transition: all 0.1s ease-in;
-        -moz-transition: all 0.1s ease-in;
-        -o-transition: all 0.1s ease-in; }
-        .cms-index-index .carousel .swiper-container .swiper-wrapper .swiper-slide .slide .slider-content a:hover {
-          color: #FFF;
-          background-color: #000; }
-.cms-index-index .promo-wrapper {
-  margin: 0 -5px; }
-  .cms-index-index .promo-wrapper .promo-box {
-    width: 33.33%;
-    display: block;
-    float: left;
-    padding: 10px 5px;
-    margin: 0; }
-    .cms-index-index .promo-wrapper .promo-box .promo-content {
-      padding: 73.5% 0;
-      background-repeat: no-repeat !important;
-      background-size: cover !important;
-      background-position: 50% 50% !important;
-      position: relative;
-      overflow: hidden; }
-      .cms-index-index .promo-wrapper .promo-box .promo-content:hover .content-wrap {
-        background: rgba(0, 0, 0, 0.8); }
-      .cms-index-index .promo-wrapper .promo-box .promo-content img.promo-img {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        max-width: 100%;
-        transition: all 0.2s ease-in;
-        -webkit-transition: all 0.2s ease-in;
-        -moz-transition: all 0.2s ease-in;
-        -o-transition: all 0.2s ease-in; }
-      .cms-index-index .promo-wrapper .promo-box .promo-content:hover img.promo-img {
-        opacity: 0.8;
-        transform: scale(1.02);
-        -webkit-transform: scale(1.02);
-        -moz-transform: scale(1.02);
-        -o-transform: scale(1.02); }
-      .cms-index-index .promo-wrapper .promo-box .promo-content .content-wrap {
-        position: absolute;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        text-align: center;
-        width: 100%;
-        padding: 20px;
-        transition: all 0.2s ease-in;
-        -webkit-transition: all 0.2s ease-in;
-        -moz-transition: all 0.2s ease-in;
-        -o-transition: all 0.2s ease-in; }
-        .cms-index-index .promo-wrapper .promo-box .promo-content .content-wrap h4 {
-          color: #FFF;
-          font-size: 130%;
-          font-weight: 100;
-          letter-spacing: 1px; }
-        .cms-index-index .promo-wrapper .promo-box .promo-content .content-wrap span {
-          display: inline-block;
-          border: 2px solid #FFF;
-          color: #FFF;
-          font-family: "Roboto Condensed", sans-serif;
-          font-weight: 500;
-          font-size: 90%;
-          text-transform: uppercase;
-          padding: 5px 20px;
-          margin-top: 5px;
-          transition: all 0.1s ease-in;
-          -webkit-transition: all 0.1s ease-in;
-          -moz-transition: all 0.1s ease-in;
-          -o-transition: all 0.1s ease-in; }
-          .cms-index-index .promo-wrapper .promo-box .promo-content .content-wrap span:hover {
-            color: #000;
-            background-color: #FFF; }
-.cms-index-index h2.just-arrived {
-  text-align: center;
-  color: #000;
-  letter-spacing: 1px;
-  font-size: 140%;
-  padding: 12px;
-  clear: left; }
-.cms-index-index .products-grid {
-  margin: 0 -5px; }
-  .cms-index-index .products-grid li {
-    padding: 0 5px;
-    margin: 0;
-    width: 20%;
-    float: left;
-    clear: none;
-    list-style-type: none; }
-  .cms-index-index .products-grid p {
-    padding-bottom: 0; }
+.white-header #header-nav {
+  border-color: #FFF; }
+  .white-header #header-nav .nav-primary li.level0 a.level0 {
+    color: #FFF; }
 
-.ios .products-grid .product-image:hover img,
-.ios .cms-index-index .promo-wrapper .promo-box .promo-content:hover img.promo-img {
-  opacity: 1 !important;
-  -webkit-transform: none !important; }
+.cms-index-index .wrapper {
+  margin-top: 0; }
+  .cms-index-index .wrapper .page-header {
+    position: absolute;
+    z-index: 2;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px; }
+  .cms-index-index .wrapper .main-container {
+    padding: 0; }
+  .cms-index-index .wrapper .bettercms-carousel {
+    width: 100vw;
+    height: 50vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw; }
 
 .block-layered-nav {
   color: #000; }
@@ -810,7 +615,7 @@ p.welcome-msg {
     letter-spacing: 1px; }
     .block-layered-nav .currently .block-subtitle {
       padding: 0;
-      font-family: "Roboto Condensed", sans-serif;
+      font-family: "Julius Sans One", sans-serif;
       font-weight: 400;
       color: #000; }
     .block-layered-nav .currently ol {
@@ -844,7 +649,7 @@ p.welcome-msg {
     .block-layered-nav .currently .btn-remove:hover:after {
       color: #FFF; }
   .block-layered-nav .block-content > dl > dt, .block-layered-nav .block-content > dl > dt:hover, .block-layered-nav .block-content > dl > dd, .block-layered-nav .block-content > dl > .filter-title {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     font-weight: 100;
     color: #000;
     background: transparent;
@@ -985,7 +790,7 @@ ol.m-filter-css-checkboxes li a.m-checkbox-unchecked {
   .product-view .product-shop .product-name {
     width: 100%; }
     .product-view .product-shop .product-name .h1 {
-      font-family: "Roboto Condensed", sans-serif;
+      font-family: "Julius Sans One", sans-serif;
       font-weight: 500;
       font-size: 155%;
       letter-spacing: 1px;
@@ -997,7 +802,7 @@ ol.m-filter-css-checkboxes li a.m-checkbox-unchecked {
     padding: 0;
     margin: 0; }
     .product-view .product-shop .price-info .price-box .price {
-      font-family: "Roboto Condensed", sans-serif;
+      font-family: "Julius Sans One", sans-serif;
       font-size: 155%;
       letter-spacing: 1px; }
     .product-view .product-shop .price-info .old-price, .product-view .product-shop .price-info .special-price, .product-view .product-shop .price-info .regular-price {
@@ -1053,7 +858,7 @@ ol.m-filter-css-checkboxes li a.m-checkbox-unchecked {
     border-right: 0;
     padding: 25px 0; }
     .product-view .product-shop.info .box-wrapper h4 {
-      font-family: "Roboto Condensed", sans-serif;
+      font-family: "Julius Sans One", sans-serif;
       font-weight: 500;
       font-size: 100%;
       letter-spacing: 1px;
@@ -1144,11 +949,11 @@ ol.m-filter-css-checkboxes li a.m-checkbox-unchecked {
       color: #FFF; }
   .product-view .add-to-cart-buttons .button span {
     color: #000;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     font-weight: 500;
     font-size: 90%; }
 .product-view .box-collateral h2 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: 300;
   font-size: 100%;
   letter-spacing: 1px;
@@ -1181,7 +986,7 @@ ol.m-filter-css-checkboxes li a.m-checkbox-unchecked {
     border: 1px solid #000;
     padding: 5px 10px 4px;
     text-transform: uppercase;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     font-weight: 500;
     font-size: 75%;
     letter-spacing: 1px; }
@@ -1269,7 +1074,7 @@ img.mfp-img {
 #customer-reviews {
   position: relative; }
   #customer-reviews > h2 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     text-align: center;
     text-transform: uppercase;
     font-size: 100%;
@@ -1310,7 +1115,7 @@ img.mfp-img {
         #customer-reviews .reviews-wrapper ul li .review-title, #customer-reviews .reviews-wrapper ul li .review-name, #customer-reviews .reviews-wrapper ul li .review-date {
           font-size: 100%;
           font-weight: 300;
-          font-family: "Roboto Condensed", sans-serif;
+          font-family: "Julius Sans One", sans-serif;
           text-transform: uppercase;
           letter-spacing: 1px; }
         #customer-reviews .reviews-wrapper ul li .review-detail {
@@ -1361,7 +1166,7 @@ img.mfp-img {
 .review-expand, .review-contract {
   position: relative;
   width: 110px;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   text-transform: uppercase;
   background-color: #FFF;
   text-align: center;
@@ -1415,7 +1220,7 @@ img.mfp-img {
   #customer-reviews .reviewform-wrapper h4 {
     padding-bottom: 15px; }
   #customer-reviews .reviewform-wrapper h3 span {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     color: #000; }
   #customer-reviews .reviewform-wrapper .fieldset .form-list textarea {
     font-size: 100%; }
@@ -1511,7 +1316,7 @@ img.mfp-img {
     font-size: 110%;
     border-radius: 2px 0 0 2px; }
   .footer .block-subscribe .actions .button {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     background: transparent;
     border: 1px solid #000;
     border-left: 0;
@@ -1555,7 +1360,7 @@ img.mfp-img {
   width: 100%;
   background: #333333;
   color: #FFF;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   text-align: center;
   padding: 14px 10%;
   z-index: 10;
@@ -1593,7 +1398,7 @@ span.pay-icons {
   margin: 3px 0 -6px; }
 
 .cart-table thead th, .cart-table tbody td {
-  font-family: "Roboto Condensed", sans-serif; }
+  font-family: "Julius Sans One", sans-serif; }
 .cart-table .button2 span, .cart-table .button2 span span {
   font-family: "Roboto", arial;
   font-size: 90%; }
@@ -1612,7 +1417,7 @@ span.pay-icons {
 .cart-table .product-cart-sku {
   display: none; }
 .cart-table .product-name a {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: 300; }
 .cart-table .cart-links > li > a {
   font-family: "Roboto", arial;
@@ -1631,7 +1436,7 @@ span.pay-icons {
   letter-spacing: 1px; }
 
 #co-shipping-method-form .buttons-set .button, .shipping .sp-methods label span, .shipping #co-shipping-method-form .sp-methods dd label, .sp-methods dt {
-  font-family: "Roboto Condensed", sans-serif; }
+  font-family: "Julius Sans One", sans-serif; }
 
 #discount-coupon-form label, .cart .giftcard label, #discount-coupon-form .button-wrapper > button,
 .cart .giftcard .button-wrapper > button, .shipping .form-list label, .cart .cart-totals table,
@@ -1640,7 +1445,7 @@ span.pay-icons {
 #checkout-step-review .data-table tbody td, #checkout-step-review .data-table tfoot td,
 body.customer-account .my-account .fieldset h2, body.customer-account .my-account .addresses-list h2,
 body.customer-account .my-account .order-details h2 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: 300;
   font-size: 100%;
   color: #000; }
@@ -1698,7 +1503,7 @@ p.hello strong {
   color: #000; }
 
 .order-info-box .box-title h2, #my_recent_reviews h3.product-name a, body.customer-account .data-table td .product-name a, .product-review .product-details h2 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: 500;
   color: #000; }
 
@@ -1716,7 +1521,7 @@ h2.table-caption {
 
 .block-account li a, .block-cms-menu li a {
   color: #000;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   letter-spacing: 1px; }
   .block-account li a:hover, .block-cms-menu li a:hover {
     color: #4d4d4d; }
@@ -1730,12 +1535,12 @@ h2.table-caption {
   margin-bottom: 15px; }
 
 .customer-account p.product-name {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: 500;
   color: #000; }
 
 #wishlist-table .product-name a, #wishlist-table.clean-table thead th {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: 500;
   color: #000;
   font-size: 120%; }
@@ -2013,7 +1818,7 @@ h2.table-caption {
     background: transparent; }
 
   .sidr, .skip-nav .label, .skip-link .label {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px; }
@@ -2058,7 +1863,7 @@ h2.table-caption {
 
   .main .sidebar .block:not(.block-layered-nav) .block-title > strong {
     background-color: #FFF;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     line-height: 145%;
     font-weight: 100; }
     .main .sidebar .block:not(.block-layered-nav) .block-title > strong:hover {

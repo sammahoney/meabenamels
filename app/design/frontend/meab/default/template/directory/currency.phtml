@@ -6,16 +6,17 @@
 ?>
 
 <div class="currency-selector">
+    <strong>Currency</strong>
     <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
         <?php if($_code == $this->getCurrentCurrencyCode()): ?>
-        <span class="current-currency <?php echo strtolower($_code) ?>-before"><?php echo $this->__('Currency select') ?></span>
+        <span class="current-currency <?php echo strtolower($_code) ?>"><?php echo $_code ?></span>
         <?php endif; ?>
     <?php endforeach; ?>
     <ul class="currency-list">
     <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
         <?php if($_code != $this->getCurrentCurrencyCode()): ?>
         <li>
-            <a href="<?php echo $this->getSwitchCurrencyUrl($_code) ?>" class="<?php echo strtolower($_code) ?>-after"><?php echo $this->__('Change currency to') ?></a>
+            <a href="<?php echo $this->getSwitchCurrencyUrl($_code) ?>" class="<?php echo strtolower($_code) ?>"><?php echo $_code ?></a>
         </li>
         <?php endif; ?>
     <?php endforeach; ?>

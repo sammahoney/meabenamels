@@ -14,9 +14,12 @@ $iconfont: 'PG_Icons';
 // Borders
 $bordercolor: #000;
 $bordercolorinvert: #FFF;
+// Colours
+$lightblue: #F1F1F1;
+$darkblue: #777F92;
 // Fonts & Weights
 $mainfont: 'Roboto', arial;
-$titlefont: 'Roboto Condensed', sans-serif;
+$titlefont: 'Julius Sans One', sans-serif;
 $lightweight: 100;
 $mediumweight: 300;
 $boldweight: 500;
@@ -45,6 +48,20 @@ body {
 	font-family: $mainfont;
 	font-weight: $mediumweight;
 	color: $textcolor;
+	&:after {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 160px;
+		z-index: 1;
+		opacity: 1;
+		background: -moz-linear-gradient(top, rgba(53,35,9,0.85) 10%, rgba(53,35,9,0) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(53,35,9,0.85) 10%,rgba(53,35,9,0) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(53,35,9,0.85) 10%,rgba(53,35,9,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+	}
 }
 .wrapper {
 	margin: 10px auto 18px;
@@ -266,76 +283,6 @@ ul.messages {
 // =============================================
 
 @import "header";
-
-// Currency selector
-.currency-selector {
-	position: absolute;
-	z-index: 6;
-	right: 385px;
-	font-size: 110%;
-	font-family: $titlefont;
-	text-transform: uppercase;
-	.gbp-before, .eur-before, .usd-before {
-		width:auto;
-		height:40px;
-		background: none;
-		overflow: hidden; 
-		display: block;
-		margin-top: 10px;
-		&:before {
-			content: "3";
-			font-family: $iconfont;
-			color: $textcolor;
-			font-size: 150%;
-			position: absolute;
-			margin: -6px 0 0 -21px;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-		}
-	}
-	.eur-before:before {
-		content: "€";
-		margin-left: -25px;
-	}
-	.usd-before:before {
-		content: "$";
-		margin-left: -21px;
-	}
-	.eur-after, .gbp-after, .usd-after {
-		&:after {
-			content: "€";
-			font-family: $iconfont;
-			color: $textcolor;
-			font-size: 150%;
-			position: absolute;
-			margin: -7px 0 0 6px;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-		}
-	}
-	.gbp-after:after {
-		content: "3";
-	}
-	.usd-after:after {
-		content: "$";
-	}
-	ul {
-		white-space: nowrap;
-		position: absolute;
-		right: -9px;
-		top: 6px;
-		li {
-			background: $backgroundinvert;
-			padding: 4px 27px 2px 9px;
-			a:first-child {
-				text-align: right;
-				color: lighten($textcolor, 50%);
-				font-weight: $lightweight;
-				text-transform: uppercase;
-			}
-		}
-	}
-}
 
 // =============================================
 // Navigation

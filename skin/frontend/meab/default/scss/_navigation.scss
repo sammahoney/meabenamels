@@ -32,6 +32,7 @@
 }
 .nav-primary {
 	position: relative;
+	text-align: center;
 	.view-all {
 		display: none;
 	}
@@ -67,8 +68,8 @@
 			position: relative;
 			&.level0 {
 				font-family: $titlefont;
-				font-size: 128%;
-				letter-spacing: $spacing+1;
+				font-size: 110%;
+				letter-spacing: $spacing+3;
 				padding: 0 25px 15px;
 			}
 			&:hover {
@@ -157,5 +158,14 @@
 	}
 	strong {
 		color: $textcolor;
+	}
+}
+// White text version
+.white-header {
+	#header-nav {
+		border-color: #FFF;
+		.nav-primary li.level0 a.level0 {
+			color: #FFF;
+		}
 	}
 }

@@ -40,15 +40,6 @@ jQuery(document).ready(function(){
 		jQuery('#popup_message').remove();
 		jQuery('body').addClass('no-popup-msg');
 	}
-	// Hide dropdown lists
-    jQuery('.currency-selector .currency-list').hide();
-    // Toggle currency menu
-    jQuery('.currency-selector').hover(function(){
-        jQuery('.currency-selector ul').stop(true,true).fadeIn(200);
-    },  
-	function(){  
-    	jQuery('.currency-selector ul').stop(true,true).fadeOut(200); 
-	});
 	// Hide messages if clicked
 	jQuery("ul.messages").click(function(){
         jQuery(this).fadeOut(400);
