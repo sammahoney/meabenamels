@@ -36,7 +36,7 @@
 <div class="topbar">
     <div class="main-container">
         <?php echo $this->getChildHtml('currency_switcher') ?>
-        <div class="cart right"><span>You have <a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>"><?php echo $_cartQty; ?></a> items in your bag </span><a class="bag-icon" href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) .'frontend/meab/default/images/bag-icon.png'; ?>" /></a></div>
+        <div class="headercart"><span>You have <a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>"><?php echo $_cartQty; ?></a> items in your bag </span><a class="bag-icon" href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) .'frontend/meab/default/images/bag-icon.png'; ?>" /></a></div>
     </div>
 </div>
 

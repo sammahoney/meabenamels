@@ -67,8 +67,11 @@ body.customer-account .my-account .order-details h2 {
 	font-size: 100%;
 	color: $textcolor;
 }
-.cart .cart-totals table tfoot strong span, .cart .cart-totals table tfoot span.price {
-	font-weight: $boldweight;
+.cart {
+	width: 100%;
+	.cart-totals table tfoot strong span, .cart .cart-totals table tfoot span.price {
+		font-weight: $boldweight;
+	}
 }
 .cart-table .product-cart-actions, #co-shipping-method-form .buttons-set  {
 	.button:active {

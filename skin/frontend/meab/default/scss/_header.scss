@@ -97,7 +97,7 @@ p.welcome-msg {
 	}
 }
 // Top bar cart
-.cart {
+.headercart {
 	float: right;
 	color: $darkblue;
 	span {
@@ -234,3 +234,13 @@ p.welcome-msg {
 		@include css3-prefix(box-shadow, 0 0 3px 0 rgba(0,0,0,0.2));
 	}
 }
+// Breadcrumbs
+.breadcrumbs {
+	margin: -15px 0 10px;
+	text-align: center;
+	ul {
+		display: inline-block;
+		margin: 0 auto;
+	}
+}
+
