@@ -3,17 +3,31 @@
 // Product View
 // =============================================
 
+.product-essential {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		background: $lightblue;
+		width: 200%;
+		height: 100%;
+		left: -50%;
+	}
+}
 .product-view {
 	.product-shop {
-		width: 56%;
+		width: 40%;
+		position: relative;
 		.product-name {
 			width: 100%;
 			.h1 {
 				font-family: $titlefont;
 				font-weight: $boldweight;
-				font-size: 155%;
+				font-size: 250%;
 				letter-spacing: $spacing+1;
 				color: $textcolor;
+				text-transform: none;
+				margin-top: 40px;
 			}
 		}
 		.price-info {
@@ -25,13 +39,16 @@
 			.price-box .price {
 				font-family: $titlefont;
 				font-size: 155%;
-				letter-spacing: $spacing+1;
+				letter-spacing: $spacing+3;
 			}
 			.old-price, .special-price, .regular-price {
 				padding-bottom: 0;
 			}
 		}
 		.availability.in-stock {
+			color: #127408;
+			font-size: 12px;
+			font-family: $titlefont;
 			& span:before {
 				font-family: 'FontAwesome';
 				content: "\f00c";
@@ -133,7 +150,7 @@
 		padding: 0;
 	}
 	.product-img-box {
-		width: 40%;
+		width: 55%;
 		a.arrow-left, a.arrow-right {
 			font-family: 'Alegreya Sans SC', $mainfont;
 			position: absolute;
@@ -153,20 +170,23 @@
 		}
 		a.enlarge {
 			position: absolute;
-			right: 10px;
-			top: -5px;
+			left: 25px;
+			top: 25px;
 			font-size: 19px;
 		}
-		.product-image-thumbs li a {
-			margin-right: 6px;
-			overflow: hidden;
-			@include transition(all 0.2s $transease);
-			&:hover {
-				border-color: transparent;
-				opacity: 0.8;
-				img {
-					@include transition(all 0.2s $transease);
-					@include css3-prefix(transform, scale(1.03));
+		.product-image-thumbs {
+			position: relative;
+			li a {
+				margin-right: 6px;
+				overflow: hidden;
+				@include transition(all 0.2s $transease);
+				&:hover {
+					border-color: transparent;
+					opacity: 0.8;
+					img {
+						@include transition(all 0.2s $transease);
+						@include css3-prefix(transform, scale(1.03));
+					}
 				}
 			}
 		}
@@ -175,7 +195,8 @@
 		display: none;
 	}
 	.add-to-cart-wrapper {
-		width: 56%;
+		width: 40%;
+		position: relative;
 	}
 	.add-to-cart {
 		padding-bottom: 15px;
@@ -198,6 +219,7 @@
 			font-family: $titlefont;
 			font-weight: $boldweight;
 			font-size: 90%;
+			letter-spacing: $spacing+2;
 		}
 	}
 	.box-collateral {

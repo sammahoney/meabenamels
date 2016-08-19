@@ -48,7 +48,7 @@ body {
 	font-family: $mainfont;
 	font-weight: $mediumweight;
 	color: $textcolor;
-	&:after {
+	&.white-header:after {
 		position: absolute;
 		content: "";
 		top: 0;
@@ -64,7 +64,7 @@ body {
 	}
 }
 .wrapper {
-	margin: 10px auto 18px;
+	margin: 0 auto 18px;
 	overflow-x: hidden;
 }
 .no-footer-msg .wrapper {

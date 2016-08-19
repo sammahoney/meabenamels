@@ -105,21 +105,6 @@
                     <div class="std"><?php echo $_helper->productAttribute($_product, $_product->getDescription(), 'description') ?></div>
                 </div>
             <?php endif;?>
-            <?php if ($_product->getResource()->getAttribute('washcare')->getFrontend()->getValue($_product)): ?>
-                <div class="careguide box-wrapper">
-                    <h4><?php echo $this->__('Wash Care') ?></h4>
-                    <div class="std">
-                        <?php 
-                            $washvalues = explode(",",$_product->getResource()->getAttribute('washcare')->getFrontend()->getValue($_product));
-                            $c = count($washvalues);$i = 1;
-                            foreach($washvalues as $washvalue){
-                                echo $washvalue; if($i < $c){echo " / ";};
-                                $i++;
-                            }
-                        ?>
-                 </div>
-                </div>
-            <?php endif;?>
         </div>
 
         <script type="text/javascript">

@@ -10,6 +10,9 @@
 	padding: 12px 20px 0;
 	position: relative;
     z-index: 2;
+    .main-container {
+		padding: 0;
+	}
 }
 .header-language-background {
 	padding: 0;
@@ -29,6 +32,18 @@ p.welcome-msg {
 	margin: 15px auto 0;
 	width: 220px;
 	min-height: 66px;
+	background: url(../images/logo_black.png) 50% 0 no-repeat;
+	background-size: 220px;
+	img {
+		opacity: 0;
+	}
+}
+.white-header {
+	.logo {
+		img {
+			opacity: 1;
+		}
+	}
 }
 #header-cart {
 	display: none !important;

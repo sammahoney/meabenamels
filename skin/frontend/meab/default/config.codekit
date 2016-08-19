@@ -153,6 +153,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/logo_black.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8563,
+		"inputAbbreviatedPath": "\/images\/logo_black.png",
+		"outputAbbreviatedPath": "\/images\/logo_black.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/manapro_filtercheckboxes\/checkbox_checked.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -521,7 +532,7 @@
 		"useLibsass": 0
 		},
 	"\/scss\/meab.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -531,7 +542,7 @@
 		"outputAbbreviatedPath": "\/css\/meab.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
