@@ -125,13 +125,13 @@ p.welcome-msg {
 	}
 	span.current-currency {
 		display: block;
-		color: $darkblue;
+		color: #FFF;
 		float: left;
 		border: 1px solid $darkblue;
 		margin: -2px -1px 0 12px;
 		padding: 4px 10px 1px;
 		font-size: 90%;
-		font-style: italic;
+		background: rgba(1, 20, 157, 0.48);
 	}
 	ul {
 		margin-top: -2px;

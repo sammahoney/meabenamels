@@ -19,7 +19,7 @@
             <?php if($_link=$this->getIterableItem()): */ ?>
         <li class="item-<?php echo $i; ?>">
             <a href="<?php echo $_link->getProductUrl() ?>" class="product-image">
-                <img src="<?php echo $this->helper('catalog/image')->init($_link, 'small_image')->resize(460,690) ?>" alt="<?php echo $this->escapeHtml($_link->getName()) ?>" />
+                <img src="<?php echo $this->helper('catalog/image')->init($_link, 'small_image')->resize(460) ?>" alt="<?php echo $this->escapeHtml($_link->getName()) ?>" />
             </a>
             <h3 class="product-name"><a href="<?php echo $_link->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_link->getName()) ?>"><?php echo $this->escapeHtml($_link->getName()) ?></a></h3>
             <div class="details"><?php if($_link->getColor()): echo $_link->getResource()->getAttribute('color')->getFrontend()->getValue($_link); endif; ?></div>
