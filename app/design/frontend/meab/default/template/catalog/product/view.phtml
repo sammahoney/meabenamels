@@ -29,6 +29,7 @@
             <div class="product-img-box">
                 <div class="product-name">
                     <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                    <div class="details"><?php if($_product->getColor()): echo $_product->getResource()->getAttribute('color')->getFrontend()->getValue($_product); ?> - <?php endif; if($_product->getDiameter()): echo $this->__('Diameter'); ?> <?php echo $_product->getDiameter(); endif; ?></div>
                 </div>
                 <?php echo $this->getChildHtml('media') ?>
             </div>
@@ -36,6 +37,7 @@
             <div class="product-shop">
                 <div class="product-name">
                     <span class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
+                    <div class="details"><?php if($_product->getColor()): echo $_product->getResource()->getAttribute('color')->getFrontend()->getValue($_product); ?> - <?php endif; if($_product->getDiameter()): echo $this->__('Diameter'); ?> <?php echo $_product->getDiameter(); endif; ?></div>
                 </div>
 
                 <div class="price-info">
@@ -46,21 +48,12 @@
 
                 <div class="extra-info">
                     <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
-                    <?php echo $this->getChildHtml('product_type_availability'); ?>
+                    <?php // echo $this->getChildHtml('product_type_availability'); ?>
                 </div>
 
                 <?php echo $this->getChildHtml('alert_urls') ?>
 
-                <?php echo $this->getChildHtml('related_products') ?>
-
                 <?php echo $this->getChildHtml('other');?>
-
-                <?php if($this->hasOptions()):?>
-                <div class="clear"></div>
-                <div class="size-guide">
-                    <a href="<?php echo $this->getUrl('size-guide'); ?>" target="_blank"><?php echo $this->__('Size Guide') ?></a>
-                </div>
-                <?php endif;?>
 
                 <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                     <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
@@ -76,18 +69,16 @@
                     <div class="add-to-box">
                         <?php if($_product->isSaleable()): ?>
                             <?php echo $this->getChildHtml('addtocart') ?>
-                            <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+                            <?php if(false): // if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
                                 <span class="or"><?php echo $this->__('OR') ?></span>
                             <?php endif; ?>
                         <?php endif; ?>
-                        <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
+                        <?php // echo $this->getChildHtml('addto') ?>
                     </div>
                     <?php echo $this->getChildHtml('extra_buttons') ?>
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">
-                        <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
+                        <?php // echo $this->getChildHtml('addto') ?>
                     </div>
                 <?php endif; ?>
             </div>
@@ -102,9 +93,13 @@
             <?php if ($_product->getDescription()): ?>
                 <div class="description box-wrapper">
                     <h4><?php echo $this->__('Product Information') ?></h4>
-                    <div class="std"><?php echo $_helper->productAttribute($_product, $_product->getDescription(), 'description') ?></div>
+                    <div class="std"><?php echo nl2br($_helper->productAttribute($_product, $_product->getDescription(), 'description')) ?></div>
                 </div>
             <?php endif;?>
+            <br/>
+            <?php echo $this->getChildHtml('sharing') ?>
+            <br/>
+            <?php echo $this->getChildHtml('related_products') ?>
         </div>
 
         <script type="text/javascript">

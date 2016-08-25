@@ -8,31 +8,27 @@
 <?php // Original Product
     $originalproduct = $this->getProduct();
     if(($originalproduct->getData('swatch_image') == '' || $originalproduct->getData('swatch_image') == 'no_selection') || strpos($this->helper('catalog/image')->init($originalproduct, 'swatch_image'),"placeholder")){ 
-        $originalswatch = $this->helper('catalog/image')->init($originalproduct, 'image')->resize(40);
+        $originalswatch = $this->helper('catalog/image')->init($originalproduct, 'image')->resize(80);
     }else{
-        $originalswatch = $this->helper('catalog/image')->init($originalproduct, 'swatch_image')->resize(40);
+        $originalswatch = $this->helper('catalog/image')->init($originalproduct, 'swatch_image')->resize(80);
     };
 ?>
 <?php if($this->getItems()->getSize()): ?>
 <div class="block block-related">
     <div class="block-content">
+        <h2><?php echo $this->__('Also available in the following colours:') ?></h2>
         <ol class="mini-products-list" id="block-related">
-            <li class="item">
-                <div class="product originalproduct">
-                    <img src="<?php echo $originalswatch; ?>" alt="<?php echo $this->escapeHtml($originalproduct->getName()) ?>" />
-                </div>
-            </li>
         <?php foreach($this->getItems() as $_item): ?>
             <?php // Check for swatch images 
                 if(($_item->getData('swatch_image') == '' || $_item->getData('swatch_image') == 'no_selection') || strpos($this->helper('catalog/image')->init($_item, 'swatch_image'),"placeholder")){ 
-                    $swatch = $this->helper('catalog/image')->init($_item, 'small_image')->resize(40);
+                    $swatch = $this->helper('catalog/image')->init($_item, 'small_image')->resize(80);
                 }else{
-                    $swatch = $this->helper('catalog/image')->init($_item, 'swatch_image')->resize(40);
+                    $swatch = $this->helper('catalog/image')->init($_item, 'swatch_image')->resize(80);
                 };
             ?>
             <li class="item">
                 <div class="product">
-                    <a href="<?php echo $_item->getProductUrl() ?>" class="swatch-image" title="<?php echo $this->escapeHtml($_item->getName()) ?>">
+                    <a href="<?php echo $_item->getProductUrl() ?>" class="swatch-image" title="<?php if($_item->getColor()): echo $_item->getResource()->getAttribute('color')->getFrontend()->getValue($_item); else: $this->escapeHtml($_item->getName()); endif; ?>">
                         <img src="<?php echo $swatch ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" />
                     </a>
                 </div>

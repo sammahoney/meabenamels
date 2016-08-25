@@ -28,7 +28,15 @@
 				color: $textcolor;
 				text-transform: none;
 				margin-top: 40px;
+				width: 100%;
+				text-indent: -4px;
 			}
+		}
+		.details {
+			font-size: 12px;
+			letter-spacing: 1px;
+			margin-bottom: 14px;
+			color: #777;
 		}
 		.price-info {
 			width: 100%;
@@ -112,9 +120,11 @@
 				font-size: 100%;
 				letter-spacing: $spacing+1;
 				color: $textcolor;
+				display: none;
 			}
 			.std {
-				font-size: 80%;
+				font-size: 85%;
+				color: #777;
 				font-family: $mainfont;
 				letter-spacing: $spacing+1;
 				line-height: 150%;
@@ -266,6 +276,10 @@
 		display: inline-block;
 		margin: 5px 0 0;
 		width: 100%;
+		h2 {
+			font-size: 105%;
+			letter-spacing: 1px;
+		}
 		ol {
 			margin-left: 4px;
 		}
@@ -280,13 +294,8 @@
 					opacity: 0.8;
 				}
 				img {
-					border: 1px solid transparent;
 					padding: 4px;
 					margin: -4px;
-					@include transition(border-color $transpeed $transease);
-					&:hover {
-						border-color: lighten( $bordercolor, 50% )
-					}
 				}
 			}
 			.originalproduct {

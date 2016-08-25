@@ -129,8 +129,8 @@ p.welcome-msg {
 		float: left;
 		border: 1px solid $darkblue;
 		margin: -2px -1px 0 12px;
-		padding: 4px 7px 3px;
-		font-size: 77%;
+		padding: 4px 10px 1px;
+		font-size: 90%;
 		font-style: italic;
 	}
 	ul {
@@ -139,8 +139,9 @@ p.welcome-msg {
 			display: inline-block;
 			border: 1px solid $darkblue;
 			margin: 0 -6px 0 0;
-			padding: 4px 7px 3px;
-			font-size: 77%;
+			padding: 4px 10px 1px;
+			font-size: 90%;
+			border-left: 0;
 			a:first-child {
 				text-align: right;
 				color: lighten($textcolor, 50%);

@@ -67,7 +67,7 @@
 	.product-name {
 		padding-top: 10px;
 		a {
-			font-size: 80%;
+			font-size: 110%;
 			font-family: $titlefont;
 			font-weight: $mediumweight+100;
 			color: $textcolor;
@@ -92,10 +92,16 @@
 	.product-info {
 		padding: 0;
 	}
+	.details {
+		font-size: 12px;
+		letter-spacing: 1px;
+		margin-bottom: 8px;
+		color: #777;
+	}
 	.price-box {
 		.price {
 			font-family: $titlefont;
-			font-size: 12px;
+			font-size: 14px;
 			letter-spacing: $spacing+1;
 			font-weight: $mediumweight+100;
 		}
