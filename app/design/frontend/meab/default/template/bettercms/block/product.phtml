@@ -1,0 +1,10 @@
+<?php
+$_product = $this->getProduct();
+$_helper = $this->helper('catalog/output');
+$_cartHelper = $this->helper('checkout/cart');
+?>
+<div class="<?php echo $this->getFullHtmlClass() ?> col" id="<?php echo $this->getHtmlId() ?>">
+    <div class="bettercms-content-inner">
+        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(800); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+    </div>
+</div>

@@ -312,4 +312,44 @@
     }
   }
 }
-
+// Collections
+.category-collections {
+	.bettercms-columns.cols-2 {
+		margin: 0 auto;
+		padding: 0 30px;
+		position: relative;
+		.bettercms-content .bettercms-content-inner {
+			position: relative;
+			max-width: 500px;
+			float: left;
+			margin-top: 10%;
+		}
+		&.blue .bettercms-content .bettercms-content-inner {
+			float: right;
+			text-align: right;
+		}
+		img {
+			width: 100%;
+			position: relative;
+			margin-top: -10%;
+		}
+		&.blue:before {
+			content: "";
+			height: 100%;
+			position: absolute;
+			background: $lightblue;
+			top: 0;
+			left: -50%;
+			width: 200%;
+			z-index: 0;
+		}
+		a.button {
+			display: inline-block;
+			margin-top: 20px;
+			font-weight: 600;
+			letter-spacing: 2px;
+			padding: 14px 30px;
+			background: $darkblue;
+		}
+	}
+}
