@@ -173,6 +173,14 @@
 		</reference>
 	</review_product_list>
 
+	<bettercms_page>
+		<remove name="product.recently.viewed" />
+	</bettercms_page>
+
+	<bettercms_category>
+		<remove name="product.recently.viewed" />
+	</bettercms_category>
+
 	<!-- Search List View -->
 	<catalogsearch_result_index>
 		<reference name="root">
