@@ -131,17 +131,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/lewis_logo.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5948,
-		"inputAbbreviatedPath": "\/images\/lewis_logo.png",
-		"outputAbbreviatedPath": "\/images\/lewis_logo.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/images\/logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
