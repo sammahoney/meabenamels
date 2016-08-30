@@ -1,0 +1,36 @@
+<?php
+	$_category = $this->getCategory();
+	$products = Mage::getModel('catalog/category')->load($_category->getId());
+	$productslist = $products->getProductCollection()
+		->addAttributeToFilter('status', 1)
+		->addAttributeToFilter('visibility', 4)
+		->setPageSize(3)
+		->addAttributeToSelect('name', 'color');
+?>
+
+<div class="featured-products <?php echo $this->getFullHtmlClass() ?> <?php if($this->getCol()){echo $this->getCol();} ?>" id="<?php echo $this->getHtmlId() ?>">
+	<div class="title"><h2><?php echo $this->getBlockData('title') ?></h2></div>
+	<div class="products-wrapper main-container">
+		<?php foreach($productslist as $_product): 
+			$_product = Mage::getModel('catalog/product')->load($_product->getId());
+			$productBlock = $this->getLayout()->createBlock('catalog/product_price');
+			$count = $productslist->count();
+			?>
+			<div class="featured-product count-<?php echo $count ?>">
+				<a href="<?php echo $_product->getProductUrl() ?>" class="product-image">
+					<img id="product-collection-image-<?php echo $_product->getId(); ?>"
+						src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(416,416)->keepTransparency(true); ?>"
+						alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+				</a>
+				<div class="product-info">
+					<div class="product-name">
+						<a href="<?php echo $_product->getProductUrl() ?>"><?php echo $_product->getName() ?></a>
+						<div class="details"><?php if($_product->getColor()): echo $_product->getResource()->getAttribute('color')->getFrontend()->getValue($_product); endif; ?></div>
+					</div>
+					<?php echo $productBlock->getPriceHtml($_product) ?>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	</div>
+	<a class="view-full" href="<?php echo $_category->getUrl() ?>"><?php echo "Shop ".$_category->getName() ?></a>
+</div>
