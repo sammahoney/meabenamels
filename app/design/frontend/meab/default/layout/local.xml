@@ -69,11 +69,11 @@
 				<action method="setBlockId"><block_id>footer_social_links</block_id></action>
 			</block>
 		</reference>
-		<reference name="before_body_end">
+		<!--reference name="before_body_end">
 			<block type="cms/block" name="pop_message">
 				<action method="setBlockId"><block_id>pop_message</block_id></action>
 			</block>
-		</reference>
+		</reference-->
 		<reference name="footer.before">
 			<block type="reports/product_viewed" name="product.recently.viewed" as="product_recently_viewed" after="-" template="reports/product_viewed.phtml"/>
 		</reference>
