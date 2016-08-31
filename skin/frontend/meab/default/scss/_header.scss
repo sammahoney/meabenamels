@@ -234,6 +234,21 @@ p.welcome-msg {
 				border-color: #FFF;
 				color: #FFF;
 				background: transparent;
+				&::-webkit-input-placeholder {
+				   color: #FFF;
+				}
+
+				&:-moz-placeholder { /* Firefox 18- */
+				   color: #FFF;  
+				}
+
+				&::-moz-placeholder {  /* Firefox 19+ */
+				   color: #FFF;  
+				}
+
+				&:-ms-input-placeholder {  
+				   color: #FFF;  
+				}
 			}
 			.search-button:before, button.button:before {
 				color: #FFF;

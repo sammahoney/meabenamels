@@ -24,6 +24,44 @@
 			margin-left: -50vw;
 		}
 	}
+	.slider-content-inner {
+		width: 100%;
+		.bettercms-content {
+			width: 100%;
+			.text {
+				@include css3-prefix (transform, none !important);
+				position: static;
+				display: block;
+				margin: 40px 0 0 12%;
+				max-width: 460px;
+				h1 {
+					color: #FFF;
+					font-weight: 600;
+					letter-spacing: 2px;
+				}
+				a {
+					border: 2px solid #FFF;
+					color: #FFF;
+					padding: 10px 20px;
+					font-family: $titlefont;
+					text-transform: uppercase;
+					font-weight: 600;
+					letter-spacing: 2px;
+					display: inline-block;
+					margin-top: 10px;
+				}
+			}
+			&.brown .text {
+				h1, a {
+					color: #4f2f16;
+					border-color: #4f2f16;
+				}
+			}
+		}
+	}
+	.swiper-pagination-bullet-active {
+		background: #000;
+	}
 }
 .featured-products.bettercms-category {
 	margin: 60px 0;
