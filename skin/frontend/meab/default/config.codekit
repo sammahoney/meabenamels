@@ -208,6 +208,94 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/social_icons\/fb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1422,
+		"inputAbbreviatedPath": "\/images\/social_icons\/fb.png",
+		"outputAbbreviatedPath": "\/images\/social_icons\/fb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/social_icons\/fb_b.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1328,
+		"inputAbbreviatedPath": "\/images\/social_icons\/fb_b.png",
+		"outputAbbreviatedPath": "\/images\/social_icons\/fb_b.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/social_icons\/in.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1489,
+		"inputAbbreviatedPath": "\/images\/social_icons\/in.png",
+		"outputAbbreviatedPath": "\/images\/social_icons\/in.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/social_icons\/in_b.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1335,
+		"inputAbbreviatedPath": "\/images\/social_icons\/in_b.png",
+		"outputAbbreviatedPath": "\/images\/social_icons\/in_b.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/social_icons\/pn.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1650,
+		"inputAbbreviatedPath": "\/images\/social_icons\/pn.png",
+		"outputAbbreviatedPath": "\/images\/social_icons\/pn.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/social_icons\/pn_b.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1579,
+		"inputAbbreviatedPath": "\/images\/social_icons\/pn_b.png",
+		"outputAbbreviatedPath": "\/images\/social_icons\/pn_b.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/social_icons\/tw.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1381,
+		"inputAbbreviatedPath": "\/images\/social_icons\/tw.png",
+		"outputAbbreviatedPath": "\/images\/social_icons\/tw.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/social_icons\/tw_b.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1325,
+		"inputAbbreviatedPath": "\/images\/social_icons\/tw_b.png",
+		"outputAbbreviatedPath": "\/images\/social_icons\/tw_b.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/js\/jquery.c00kie.js": {
 		"fileType": 64,
 		"ignore": 0,

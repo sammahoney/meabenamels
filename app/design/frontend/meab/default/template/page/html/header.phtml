@@ -31,17 +31,28 @@
 <?php // Phone number from admin
     $phone = Mage::getStoreConfig('general/store_information/phone');
     $_cartQty = Mage::getSingleton('checkout/cart')->getItemsCount();
+    $imgurl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN).'frontend/meab/default/images/social_icons/';
 ?>
 
 <div class="topbar">
     <div class="main-container">
         <?php echo $this->getChildHtml('currency_switcher') ?>
+        <a class="accountlogin" href="<?php echo $this->helper('customer')->getAccountUrl(); ?>"><?php echo $this->__('Account Login / Register'); ?></a>
         <div class="headercart"><span>You have <a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>"><?php echo $_cartQty; ?></a> items in your bag </span><a class="bag-icon" href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) .'frontend/meab/default/images/bag-icon.png'; ?>" /></a></div>
     </div>
 </div>
 
 <header id="header" class="page-header">
     <div class="page-header-container">
+
+        <div class="social-icons">
+            <?php $bodyclass = $this->getLayout()->getBlock('root')->getBodyClass(); $b='_b';if(strpos($bodyclass, 'white-header') !== false){$b='';} ?>
+            <a href="https://www.facebook.com/meabenamels" target="_blank"><img src="<?php echo $imgurl.'fb'.$b.'.png'; ?>"/></a>
+            <a href="#" target="_blank"><img src="<?php echo $imgurl.'tw'.$b.'.png'; ?>"/></a>
+            <a href="#" target="_blank"><img src="<?php echo $imgurl.'pn'.$b.'.png'; ?>"/></a>
+            <a href="https://www.instagram.com/meab_enamels_/" target="_blank"><img src="<?php echo $imgurl.'in'.$b.'.png'; ?>"/></a>
+        </div>
+
         <a class="logo" href="<?php echo $this->getUrl('') ?>">
             <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
         </a>
@@ -58,7 +69,7 @@
             </a>
 
             <div class="account-cart-wrapper">
-                <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>"<?php echo $this->__('Account'); ?></a>
+                <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>"><?php echo $this->__('Account'); ?></a>
             </div>
 
 

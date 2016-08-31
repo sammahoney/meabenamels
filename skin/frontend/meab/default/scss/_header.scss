@@ -65,6 +65,7 @@ p.welcome-msg {
 }
 .account-cart-wrapper {
 	font-family: $titlefont;
+	display: none;
 	.icon {
 		background: none !important;
 		&:before {
@@ -116,7 +117,7 @@ p.welcome-msg {
 	font-size: 110%;
 	font-family: $titlefont;
 	text-transform: uppercase;
-	width: 25%;
+	width: 20%;
 	float: left;
 	strong {
 		display: block;
@@ -151,9 +152,25 @@ p.welcome-msg {
 		}
 	}
 }
+// Temp account
+.accountlogin, .accountlogin:visited, .accountlogin:hover {
+	font-family: $titlefont;
+	color: $darkblue;
+	font-size: 110%;
+    text-transform: uppercase;
+}
+// Social Icons
+.social-icons {
+    position: absolute;
+    top: 18px;
+	a {
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
 // Search
 #header-search {
-	display: none;
+	top: 18px;
 	#search_mini_form {
 		input#search {
 			font-family: $mainfont;
@@ -206,6 +223,21 @@ p.welcome-msg {
 			height: 40px;
 			border: 0;
 			background: none;
+		}
+	}
+}
+.white-header {
+	#header-search {
+	top: 18px;
+		#search_mini_form {
+			input#search {
+				border-color: #FFF;
+				color: #FFF;
+				background: transparent;
+			}
+			.search-button:before, button.button:before {
+				color: #FFF;
+			}
 		}
 	}
 }
