@@ -31,6 +31,7 @@
                     <a href="<?php echo $_item->getProductUrl() ?>" class="swatch-image" title="<?php if($_item->getColor()): echo $_item->getResource()->getAttribute('color')->getFrontend()->getValue($_item); else: $this->escapeHtml($_item->getName()); endif; ?>">
                         <img src="<?php echo $swatch ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" />
                     </a>
+                    <div class="details"><?php if($_item->getColor()): echo $_item->getResource()->getAttribute('color')->getFrontend()->getValue($_item); endif; ?></div>
                 </div>
             </li>
         <?php endforeach ?>
