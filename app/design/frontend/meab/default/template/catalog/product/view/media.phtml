@@ -28,7 +28,7 @@
                     <div class="swiper-slide">
                         <div class="slide">
                             <a class="enlarge" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_product->getFile())->resize(1200,1800); ?>"><i class="fa fa-search-plus"></i></a>
-                            <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_product->getFile())->resize(900,900); ?>" alt="<?php echo $this->escapeHtml($_product->getLabel()) ?>" />
+                            <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_product->getFile())->resize(900)->keepFrame(false); ?>" alt="<?php echo $this->escapeHtml($_product->getLabel()) ?>" />
                         </div>
                     </div>
                 <?php else: ?>

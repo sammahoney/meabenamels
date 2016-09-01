@@ -8,9 +8,9 @@
 <?php // Original Product
     $originalproduct = $this->getProduct();
     if(($originalproduct->getData('swatch_image') == '' || $originalproduct->getData('swatch_image') == 'no_selection') || strpos($this->helper('catalog/image')->init($originalproduct, 'swatch_image'),"placeholder")){ 
-        $originalswatch = $this->helper('catalog/image')->init($originalproduct, 'image')->resize(80);
+        $originalswatch = $this->helper('catalog/image')->init($originalproduct, 'image')->resize(80)->keepFrame(false);
     }else{
-        $originalswatch = $this->helper('catalog/image')->init($originalproduct, 'swatch_image')->resize(80);
+        $originalswatch = $this->helper('catalog/image')->init($originalproduct, 'swatch_image')->resize(80)->keepFrame(false);
     };
 ?>
 <?php if($this->getItems()->getSize()): ?>
@@ -21,9 +21,9 @@
         <?php foreach($this->getItems() as $_item): ?>
             <?php // Check for swatch images 
                 if(($_item->getData('swatch_image') == '' || $_item->getData('swatch_image') == 'no_selection') || strpos($this->helper('catalog/image')->init($_item, 'swatch_image'),"placeholder")){ 
-                    $swatch = $this->helper('catalog/image')->init($_item, 'small_image')->resize(80);
+                    $swatch = $this->helper('catalog/image')->init($_item, 'small_image')->resize(80)->keepFrame(false);
                 }else{
-                    $swatch = $this->helper('catalog/image')->init($_item, 'swatch_image')->resize(80);
+                    $swatch = $this->helper('catalog/image')->init($_item, 'swatch_image')->resize(80)->keepFrame(false);
                 };
             ?>
             <li class="item">
