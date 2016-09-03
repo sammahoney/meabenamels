@@ -17,6 +17,9 @@
 		margin-left: -25vw;
 		text-align: center;
 		margin-top: 12%;
+		@media only screen and (max-width: 770px) {
+			display: none;
+		}
 	}
 	.category-image {
 		border: 0;
@@ -28,6 +31,9 @@
 		top: -2px;
 		overflow: hidden;
 		height: 330px;
+		@media only screen and (max-width: 770px) {
+			height: 130px;
+		}
 		background: #2c1c1b;
 		img {
 			opacity: 0.4;
@@ -36,6 +42,17 @@
 	}
 	.category-products, .col-left {
 		margin-top: 330px;
+	}
+	@media only screen and (max-width: 770px) {
+		.block-layered-nav .block-subtitle--filter {
+			background: $darkblue;
+		}
+		.col-left {
+			margin-top: 160px;
+		}
+		.category-products {
+			margin-top: 0;
+		}
 	}
 	.block-layered-nav .block-title {
 		display: block;
@@ -50,6 +67,9 @@
 		left: 50%;
 		margin-left: -50vw;
 		text-align: center;
+		@media only screen and (max-width: 770px) {
+			top: 44px;
+		}
 		h1 {
 			position: absolute;
 			z-index: 9;

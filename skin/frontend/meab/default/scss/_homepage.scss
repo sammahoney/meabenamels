@@ -9,9 +9,11 @@
 		.page-header {
 			position: absolute;
 			z-index: 2;
-			width: 1200px;
-			left: 50%;
-			margin-left: -600px;
+			@media only screen and (min-width: 1200px) {
+				width: 1200px;
+				left: 50%;
+				margin-left: -600px;
+			}
 		}
 		.main-container {
 			padding: 0;
@@ -19,6 +21,15 @@
 		.bettercms-carousel {
 			width: 100vw;
 			height: 50vw;
+			@media only screen and (min-width: 980px) and (max-width: 1200px) {
+				height: 60vw;
+			}
+			@media only screen and (min-width: 771px) and (max-width: 979px) {
+				height: 70vw;
+			}
+			@media only screen and (max-width: 770px) {
+				height: 600px;
+			}
 			position: relative;
 			left: 50%;
 			margin-left: -50vw;
@@ -34,6 +45,15 @@
 				display: block;
 				margin: 40px 0 0 12%;
 				max-width: 460px;
+				@media only screen and (min-width: 771px) and (max-width: 979px) {
+					max-width: 260px;
+					margin-top: 100px;
+				}
+				@media only screen and (max-width: 770px) {
+					margin-top: 300px;
+					background: rgba(119, 127, 146, 0.8);
+					padding: 20px;
+				}
 				h1 {
 					color: #FFF;
 					font-weight: 600;
@@ -55,6 +75,9 @@
 				h1, a {
 					color: #4f2f16;
 					border-color: #4f2f16;
+				}
+				@media only screen and (max-width: 770px) {
+					background: rgba(255, 255, 255, 0.8);
 				}
 			}
 		}
@@ -94,6 +117,7 @@
 		width: 33%;
 		display: inline-block;
 		text-align: center;
+		vertical-align: middle;
 		.product-name {
 			font-size: 110%;
 			font-family: $titlefont;
@@ -111,7 +135,6 @@
 		}
 		img {
 			width: 100%;
-			margin: -10% 0;
 		}
 	}
 }

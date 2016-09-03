@@ -13,35 +13,12 @@
 // 1199px to 980px
 @media only screen and (min-width: $bp-large+1) and (max-width: $bp-xlarge) {
 
-	.nav-primary li.level0 ul.level0 {
-		padding: 40px 300px 20px 0;
-		@include css3-prefix(column-gap, 10px);
-	}
-	.menu-promo {
-		width: 285px;
-	}
+
 
 }
 // 979px to 771px
 @media only screen and (min-width: $bp-medium+1) and (max-width: $bp-large) {
 
-	.logo {
-		max-width: 160px;
-		min-height: 60px;
-	}
-	p.welcome-msg {
-		position: absolute;
-		font-size: 85%;
-		margin: 41px 0 0 81px;
-	}
-	.nav-primary li.level0 ul.level0 {
-		padding: 40px 0 20px 0;
-		@include css3-prefix(column-count, 5);
-		@include css3-prefix(column-gap, 20px);
-	}
-	.menu-promo {
-		display: none;
-	}
 	.cms-index-index .carousel .swiper-container .swiper-wrapper .swiper-slide .slide {
 		height: 418px;
 		.slider-content {
@@ -154,12 +131,27 @@
 		display: none !important;
 	}
 	.logo {
-		width: 50%;
+		width: 175px;
+		background-size: 160px;
 		min-height: 60px;
+		float: left;
+		margin-left: 10px;
 		img {
 			padding: 0 4%;
-			width: 200px;
+			width: 175px;
 		}
+	}
+	.social-icons {
+		left: auto;
+		right: -20px;
+		transform: scale(0.7);
+		top: 62px;
+	}
+	.white-header .social-icons {
+		top: 18px;
+	}
+	.skip-content.skip-active {
+		background: $darkblue;
 	}
 	#phone {
 		position: absolute;
@@ -169,6 +161,10 @@
 	.currency-selector {
 		right: 10px;
 		top: 30px;
+		display: none;
+	}
+	.accountlogin {
+		display: none;
 	}
 	#header-account.skip-active {
 		position: relative;
@@ -199,7 +195,7 @@
 	}
 	.skip-links {
 		border: 0;
-		background: lighten($background, 20%);
+		background: $darkblue;
 	}
 	.skip-link, .skip-nav {
 		line-height: 44px;

@@ -98,17 +98,35 @@
 	}
 }
 // Better CMS helpers
+.category-the-process, .category-our-story, .category-stockists {
+	.page-title.category-title h1 {
+		display: none;
+	}
+	@media only screen and (max-width: 770px) {
+		.bettercms-content.notransform {
+			padding-left: 5%;
+			padding-right: 5%;
+		}
+	}
+}
 .bettercms-page.catalog-category-view {
 	h1 {
 		color: #FFF;
 		font-size: 400%;
 		font-weight: 600;
 		letter-spacing: 12px;
+		@media only screen and (max-width: 770px) {
+			font-size: 150%;
+			text-align: center;
+		}
 	}
 	h2 { // Standard Titles
 		position: relative;
 		z-index: 1;
 		font-size: 38px;
+		@media only screen and (max-width: 770px) {
+			font-size: 20px;
+		}
 		letter-spacing: $spacing+8;
 		color: #000;
 	}
@@ -311,6 +329,9 @@
 }
 // Collections
 .category-collections {
+	h1 {
+		display: none;
+	}
 	.bettercms-columns.cols-2 {
 		margin: 0 auto;
 		padding: 0 30px;
@@ -322,8 +343,10 @@
 			margin-top: 10%;
 		}
 		&.blue .bettercms-content .bettercms-content-inner {
-			float: right;
-			text-align: right;
+			@media only screen and (min-width: 771px) {
+				float: right;
+				text-align: right;
+			}
 		}
 		img {
 			width: 100%;

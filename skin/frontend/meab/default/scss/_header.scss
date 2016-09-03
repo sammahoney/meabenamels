@@ -45,6 +45,9 @@ p.welcome-msg {
 		}
 	}
 }
+.page-header {
+	width: 100%;
+}
 #header-cart {
 	display: none !important;
 }
@@ -114,10 +117,13 @@ p.welcome-msg {
 }
 // Currency selector
 .currency-selector {
-	font-size: 110%;
+	font-size: 100%;
 	font-family: $titlefont;
 	text-transform: uppercase;
 	width: 20%;
+	@media only screen and (min-width: 770px) and (max-width: 979px) {
+		width: 29%;
+	}
 	float: left;
 	strong {
 		display: block;
@@ -156,7 +162,7 @@ p.welcome-msg {
 .accountlogin, .accountlogin:visited, .accountlogin:hover {
 	font-family: $titlefont;
 	color: $darkblue;
-	font-size: 110%;
+	font-size: 100%;
     text-transform: uppercase;
 }
 // Social Icons
