@@ -131,20 +131,20 @@
 		display: none !important;
 	}
 	.logo {
-		width: 175px;
-		background-size: 160px;
+		width: 135px;
+		background-size: 125px;
 		min-height: 60px;
 		float: left;
 		margin-left: 10px;
 		img {
 			padding: 0 4%;
-			width: 175px;
+			width: 135px;
 		}
 	}
 	.social-icons {
 		left: auto;
 		right: -20px;
-		transform: scale(0.7);
+		@include css3-prefix (transform, scale(0.7));
 		top: 62px;
 	}
 	.white-header .social-icons {
