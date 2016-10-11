@@ -1,0 +1,109 @@
+/*
+Theme Name:     Meab
+Theme URI:      http://www.meabenamels.com
+Description:    Meab Theme
+Author:         Sam Mahoney
+Author URI:     http://www.divinemonkey.co.uk
+Template:       twentysixteen
+Version:        0.1.0
+*/
+@import url("../twentysixteen/style.css");
+
+/* Custom Styles */
+body {
+	background: #FFF;
+	font-family: "Roboto", Verdana, Arial, sans-serif;
+}
+body:not(.custom-background-image):before, body:not(.custom-background-image):after {
+	display: none !important;
+}
+.site-content p {
+	font-size: 100%;
+}
+.entry-footer {
+	font-family: "Roboto", Verdana, Arial, sans-serif;
+}
+.page-title, .widget .widget-title, h2.entry-title, h1.entry-title, h2.comments-title, h2#reply-title, input[type="submit"], .comment-form label {
+	font-family: "Julius Sans One", Verdana, Arial, sans-serif !important;
+}
+.site-main header.page-header {
+	padding: 0;
+	width: 100%;
+	border-bottom: 1px solid #000;
+	margin-bottom: 20px;
+}
+.page-title, .widget .widget-title, h2.entry-title, h1.entry-title, h2.comments-title, h2#reply-title, input[type="submit"], .comment-form label {
+	font-size: 22px;
+}
+.single h1.entry-title {
+	font-size: 35px;
+}
+.site {
+	margin: 70px 0 0;
+}
+.page-header {
+	border-top: 0;
+}
+.error404 .page-content > form.search-form {
+	max-width: 222px;
+}
+.error404 .page-content > form.search-form input {
+	width: 100%;
+}
+.widget .search-form label, .widget .search-form label input {
+	width: 100%;
+}
+.widget {
+	border-top: 1px solid #231E46;
+}
+.widget a {
+	font-size: 14px;
+}
+.comment-reply-link, .comment-reply-link:hover, .comment-reply-link:focus {
+	border-color: #555;
+	color: #555;
+}
+.entry-title a:hover, .entry-title a:focus {
+	color: #666;
+}
+.search-submit:before {
+	color: #FFF;
+	line-height: inherit !important;
+	font-size: 16px !important;
+}
+input[type="date"], input[type="time"], input[type="datetime-local"], input[type="week"], input[type="month"], input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], textarea {
+	background: transparent !important;
+	border-color: #000;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="number"]:focus, textarea:focus {
+	border-color: #231E46;
+}
+input[type="search"].search-field {
+	border-radius: 0;
+	font-weight: normal;
+}
+input[type="search"].search-field::-webkit-input-placeholder {
+   font-weight: normal;
+   font-family: "Roboto", Verdana, Arial, sans-serif !important;
+}
+input[type="search"].search-field::-moz-placeholder {  /* Firefox 19+ */
+   font-weight: normal; 
+   font-family: "Roboto", Verdana, Arial, sans-serif !important; 
+}
+button {
+	border-radius: 0;
+}
+button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+	background: #555;
+}
+.entry-footer a:hover, .entry-footer a:focus {
+	color: #555;
+	box-shadow: none !important;
+}
+.entry-title a {
+	color: #555;
+}
+.entry-title a:hover {
+	color: #000;
+	text-decoration: none;
+}
