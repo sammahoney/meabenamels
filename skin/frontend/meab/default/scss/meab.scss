@@ -396,6 +396,17 @@ span.pay-icons {
 		position: relative !important;
 	}
 }
+.contacts-index-index {
+	.main:after {
+		content: "Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.";
+		text-align: center;
+		width: 100%;
+		padding: 5% 0;
+	}
+	.col-main {
+		display: none;
+	}
+}
 
 // =============================================
 // Cms Page Helpers
