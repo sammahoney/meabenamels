@@ -379,6 +379,25 @@ span.pay-icons {
 }
 
 // =============================================
+// Contact
+// =============================================
+
+.category-contact {
+	.category-title {
+		display: none;
+	}
+	.page-title {
+		top: 0;
+		h1 {
+			border: 0;
+		}
+	}
+	.category-image {
+		position: relative !important;
+	}
+}
+
+// =============================================
 // Cms Page Helpers
 // =============================================
 
