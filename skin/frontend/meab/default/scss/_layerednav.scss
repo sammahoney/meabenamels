@@ -72,9 +72,10 @@
 			border: 0;
 			padding: 5px 0;
 			letter-spacing: $spacing+1;
+			margin-bottom: 10px;
 			ol > li > {
 				span, a, a span.price {
-					padding: 5px 0;
+					padding: 5px 0 5px 25px !important;
 					font-family: $mainfont;
 					font-size: 80%;
 					font-weight: $mediumweight;
@@ -84,8 +85,14 @@
 					display: none;
 				}
 				a span.price {
-					padding: 0;
+					padding: 0 !important;
 					font-size: 100%;
+				}
+				a.amshopby-price.amshopby-attr {
+					padding-left: 25px !important;
+				}
+				&.amshopby-cat a {
+					padding-left: 0 !important;
 				}
 			}
 		}
@@ -95,5 +102,14 @@
 			width: 75%;
 			text-transform: uppercase;
 		}
+	}
+}
+@media only screen and (max-width: 770px) {
+	dl#narrow-by-list, dl#narrow-by-list2 {
+		padding: 15px !important;
+	}
+	.sidebar .block-layered-nav .block-content>dl>dd ol>li>a {
+		padding: 10px 20px !important;
+		background-position: 5px center;
 	}
 }
