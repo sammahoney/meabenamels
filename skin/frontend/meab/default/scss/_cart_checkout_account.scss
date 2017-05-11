@@ -121,6 +121,15 @@ body.customer-account .my-account .order-details h2 {
     display: table-row;
 }
 
+// Cross sell
+.crosssell.box-collateral.box-up-sell {
+	width: 100%;
+	float: none;
+	display: block;
+	text-align: center;
+	clear: both;
+}
+
 // =============================================
 // Account
 // =============================================
