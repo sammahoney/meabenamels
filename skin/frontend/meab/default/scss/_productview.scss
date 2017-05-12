@@ -308,6 +308,10 @@
 			}
 		}
 	}
+	.clearer {
+		clear: both;
+		margin-bottom: 20px;
+	}
 }
 // Undo zoom animations for ios to fix flickering bug
 .ios {
