@@ -315,6 +315,9 @@
 		clear: both;
 		margin-bottom: 20px;
 	}
+	.product-options-bottom .social, .product-options-bottom ul.add-to-links, .product-shop .extra-info {
+		display: none;
+	}
 }
 // Undo zoom animations for ios to fix flickering bug
 .ios {
