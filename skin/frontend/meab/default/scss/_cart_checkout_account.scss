@@ -130,6 +130,11 @@ body.customer-account .my-account .order-details h2 {
 	clear: both;
 }
 
+// Gift cards
+a.btn-remove.btn-remove-amgiftcard img {
+	display: none;
+}
+
 // =============================================
 // Account
 // =============================================
